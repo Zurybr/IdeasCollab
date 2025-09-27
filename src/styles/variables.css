@@ -3,6 +3,18 @@
     --dark-background: #0a0a0a;
     --light-background: #f4f1ea;
 
+    /* Layout Dimensions */
+    --navbar-height: 4rem;
+    --navbar-height-mobile: 3.5rem;
+    --sidebar-width: 320px;
+
+    /* RGB Values for transparency */
+    --primary-rgb: 6, 95, 70;
+    --accent-rgb: 42, 161, 152;
+    --surface-rgb: 244, 241, 234;
+    --background-rgb: 253, 246, 227;
+    --text-rgb: 88, 110, 117;
+
     /* Typography */
     --font-primary: 'Inter', sans-serif;
     --font-mono: 'Space Mono', monospace;

@@ -17,8 +17,8 @@ export const MainContent = React.forwardRef<HTMLElement, MainContentProps>(
       <section ref={ref} className={classes} {...props}>
         <Container center size="md">
           <Text
-            as="h2"
-            size="5xl"
+            as="h1"
+            size="6xl"
             weight="bold"
             align="center"
             className="main-content__title"
@@ -26,7 +26,7 @@ export const MainContent = React.forwardRef<HTMLElement, MainContentProps>(
             Your project starts here.
           </Text>
 
-          <Text size="xl" align="center" className="main-content__description">
+          <Text size="lg" align="center" className="main-content__description">
             Once an idea takes shape, the next step is execution. Our platform
             connects you with the tools and talent needed to transform a concept
             into a tangible reality. Explore, collaborate, and build without
@@ -34,7 +34,7 @@ export const MainContent = React.forwardRef<HTMLElement, MainContentProps>(
           </Text>
 
           <div className="main-content__cta">
-            <ArrowDown />
+            <ArrowDown size={32} />
             <Button variant="primary" size="lg" onClick={onGetStarted}>
               Let's get started!
             </Button>

@@ -27,16 +27,46 @@
 /* Variants */
 .btn--primary {
     color: var(--light-background);
-    background-color: var(--text-color);
+    background: linear-gradient(135deg, var(--text-color) 0%, #1a1a1a 100%);
+    border: 2px solid transparent;
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.3);
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    position: relative;
+    overflow: hidden;
+}
 
-    &:hover:not(:disabled) {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
+.btn--primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #333 0%, var(--text-color) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
-    &:active:not(:disabled) {
-        transform: translateY(-1px);
-    }
+.btn--primary:hover:not(:disabled)::before {
+    opacity: 1;
+}
+
+.btn--primary:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(44, 44, 44, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn--primary:active:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.3);
+}
+
+.btn--primary span,
+.btn--primary * {
+    position: relative;
+    z-index: 2;
 }
 
 .btn--secondary {

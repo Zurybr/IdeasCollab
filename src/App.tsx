@@ -4,6 +4,7 @@ import { LandingPage, Home } from "./pages";
 
 // Styles
 import "./styles/globals.css";
+import { Layout } from "./components/layout";
 
 //=============== MAIN APP COMPONENT ===============//
 function App() {
@@ -35,7 +36,13 @@ function App() {
 
   // Si está en la ruta raíz y ya está onboarded, mostrar Home
   if (window.location.pathname === "/" && userOnboarded === "true") {
-    return <Home />;
+    return (
+      <>
+        <Layout>
+          <Home />
+        </Layout>
+      </>
+    );
   }
 
   // Si está en /landing, mostrar LandingPage

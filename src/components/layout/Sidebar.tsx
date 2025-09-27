@@ -1,0 +1,145 @@
+import { useState } from "react";
+import "./Sidebar.css";
+
+interface SidebarProps {
+  isOpen: boolean;
+  onClose?: () => void;
+}
+
+interface NavItem {
+  icon: React.ReactNode;
+  label: string;
+  href: string;
+  badge?: string;
+}
+
+export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
+  const [activeItem, setActiveItem] = useState("/");
+
+  const navItems: NavItem[] = [
+    {
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+        </svg>
+      ),
+      label: "Dashboard",
+      href: "/",
+    },
+    {
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+        </svg>
+      ),
+      label: "Projects",
+      href: "/projects",
+      badge: "12",
+    },
+    {
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+        </svg>
+      ),
+      label: "Team",
+      href: "/team",
+    },
+    {
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z" />
+        </svg>
+      ),
+      label: "Resources",
+      href: "/resources",
+    },
+    {
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.82,11.69,4.82,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+        </svg>
+      ),
+      label: "Settings",
+      href: "/settings",
+    },
+  ];
+
+  const handleItemClick = (href: string) => {
+    setActiveItem(href);
+    if (onClose) onClose();
+  };
+
+  return (
+    <>
+      {/* Mobile Overlay */}
+      {isOpen && <div className="sidebar__overlay" onClick={onClose} />}
+
+      {/* Sidebar */}
+      <aside className={`sidebar ${isOpen ? "sidebar--open" : ""}`}>
+        <div className="sidebar__header">
+          <div className="sidebar__brand">
+            <div className="sidebar__brand-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+            <span className="sidebar__brand-text">IdeaCollab</span>
+          </div>
+
+          <button className="sidebar__close lg:hidden" onClick={onClose}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M6 18L18 6M6 6l12 12"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <nav className="sidebar__nav">
+          <ul className="sidebar__nav-list">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  className={`sidebar__nav-item ${
+                    activeItem === item.href ? "sidebar__nav-item--active" : ""
+                  }`}
+                  onClick={() => handleItemClick(item.href)}
+                >
+                  <span className="sidebar__nav-icon">{item.icon}</span>
+                  <span className="sidebar__nav-label">{item.label}</span>
+                  {item.badge && (
+                    <span className="sidebar__nav-badge">{item.badge}</span>
+                  )}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="sidebar__footer">
+          <div className="sidebar__user">
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              alt="User"
+              className="sidebar__user-avatar"
+            />
+            <div className="sidebar__user-info">
+              <div className="sidebar__user-name">John Doe</div>
+              <div className="sidebar__user-email">john@example.com</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </>
+  );
+};

@@ -70,7 +70,11 @@ function LandingPage() {
         if (mainContentRef.current) {
           mainContentRef.current.classList.remove("visible");
           // Resetear propiedades GSAP
-          gsap.set(mainContentRef.current, { opacity: 0 });
+          gsap.set(mainContentRef.current, {
+            opacity: 0,
+            visibility: "hidden",
+            force3D: true,
+          });
         }
         if (frameRef.current) {
           // Resetear frame a su estado inicial
@@ -116,6 +120,13 @@ function LandingPage() {
     window.addEventListener("scroll", handleScroll);
 
     const ctx = gsap.context(() => {
+      // Establecer estado inicial explícito para MainContent
+      gsap.set(mainContentRef.current, {
+        opacity: 0,
+        visibility: "hidden",
+        force3D: true,
+      });
+
       gsap.fromTo(
         circleRef.current,
         { scale: 1, transform: "translate(-50%, -50%) translateZ(-600px)" },
@@ -213,8 +224,20 @@ function LandingPage() {
         mainContentRef.current,
         {
           opacity: 1,
+          visibility: "visible",
           duration: 1.2,
           ease: "power2.out",
+          force3D: true,
+          onComplete: () => {
+            // Asegurar que la opacity quede en 1
+            if (mainContentRef.current) {
+              gsap.set(mainContentRef.current, {
+                opacity: 1,
+                visibility: "visible",
+                clearProps: "transform",
+              });
+            }
+          },
         },
         "<0.2"
       );
