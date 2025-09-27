@@ -5,10 +5,12 @@ import { ArrowDown } from "../ui/ArrowDown";
 import { Container } from "../ui/Container";
 import "./MainContent.css";
 
-export type MainContentProps = React.HTMLAttributes<HTMLElement>;
+export interface MainContentProps extends React.HTMLAttributes<HTMLElement> {
+  onGetStarted?: () => void;
+}
 
 export const MainContent = React.forwardRef<HTMLElement, MainContentProps>(
-  ({ className = "", ...props }, ref) => {
+  ({ className = "", onGetStarted, ...props }, ref) => {
     const classes = ["main-content", className].filter(Boolean).join(" ");
 
     return (
@@ -33,13 +35,7 @@ export const MainContent = React.forwardRef<HTMLElement, MainContentProps>(
 
           <div className="main-content__cta">
             <ArrowDown />
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => {
-                alert("Get Started clicked!");
-              }}
-            >
+            <Button variant="primary" size="lg" onClick={onGetStarted}>
               Let's get started!
             </Button>
           </div>
