@@ -33,7 +33,7 @@ export const Layout = ({ children }: LayoutProps) => {
               isSidebarOpen ? "layout__main--sidebar-open" : ""
             }`}
           >
-            <div className="layout__page">{children}</div>
+            {children}
             <Footer />
           </main>
         </div>

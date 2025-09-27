@@ -1,0 +1,87 @@
+/*=================================================================================*/
+/*                               SOLARIZED THEME                                   */
+/*=================================================================================*/
+
+:root {
+    /* Solarized Color Palette */
+    --base03: #002b36;
+    --base02: #073642;
+    --base01: #586e75;
+    --base00: #657b83;
+    --base0: #839496;
+    --base1: #93a1a1;
+    --base2: #eee8d5;
+    --base3: #fdf6e3;
+
+    --yellow: #b58900;
+    --orange: #cb4b16;
+    --red: #dc322f;
+    --magenta: #d33682;
+    --violet: #6c71c4;
+    --blue: #268bd2;
+    --cyan: #2aa198;
+    --green: #859900;
+}
+
+/* Light Theme (Default) */
+:root,
+[data-theme="light"] {
+    /* Background Colors */
+    --background: var(--base3);
+    --surface: var(--base2);
+
+    /* Text Colors */
+    --text: var(--base00);
+    --text-secondary: var(--base01);
+
+    /* Accent Colors */
+    --primary: var(--blue);
+    --accent: var(--cyan);
+
+    /* Border Colors */
+    --border: var(--base1);
+
+    /* Status Colors */
+    --success: var(--green);
+    --warning: var(--yellow);
+    --error: var(--red);
+    --info: var(--blue);
+
+    /* RGB Values for transparency */
+    --primary-rgb: 38, 139, 210;
+    --accent-rgb: 42, 161, 152;
+    --surface-rgb: 238, 232, 213;
+    --background-rgb: 253, 246, 227;
+    --text-rgb: 101, 123, 131;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    /* Background Colors */
+    --background: var(--base03);
+    --surface: var(--base02);
+
+    /* Text Colors */
+    --text: var(--base0);
+    --text-secondary: var(--base1);
+
+    /* Accent Colors */
+    --primary: var(--blue);
+    --accent: var(--cyan);
+
+    /* Border Colors */
+    --border: var(--base01);
+
+    /* Status Colors */
+    --success: var(--green);
+    --warning: var(--yellow);
+    --error: var(--red);
+    --info: var(--blue);
+
+    /* RGB Values for transparency */
+    --primary-rgb: 38, 139, 210;
+    --accent-rgb: 42, 161, 152;
+    --surface-rgb: 7, 54, 66;
+    --background-rgb: 0, 43, 54;
+    --text-rgb: 131, 148, 150;
+}

@@ -1,16 +1,25 @@
+/*=================================================================================*/
+/*                              LAYOUT COMPONENT                                   */
+/*=================================================================================*/
+
 .layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color var(--transition-normal), color var(--transition-normal);
+  background: var(--background);
+  color: var(--text);
+  transition: all var(--transition-normal);
 }
 
 .layout__content {
   flex: 1;
   display: flex;
   min-height: 0;
+  background: var(--background);
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .layout__main {
@@ -19,14 +28,13 @@
   flex-direction: column;
   min-width: 0;
   transition: all var(--transition-normal);
+  background: var(--background);
+  box-sizing: border-box;
+  padding: 1.25rem 1.5rem 2.25rem;
 }
 
 .layout__page {
-  flex: 1;
-  padding: var(--space-6) var(--space-4);
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
+  display: none;
 }
 
 /* Mobile adjustments */
@@ -35,24 +43,18 @@
     transform: translateX(0);
   }
 
-  .layout__page {
-    padding: var(--space-4);
-  }
 }
 
 /* Desktop styles */
 @media (min-width: 1024px) {
   .layout__content {
-    height: calc(100vh - 73px);
-    /* Account for navbar height */
+    height: calc(100vh - var(--navbar-height));
+    /* Fill viewport minus navbar */
   }
 
   .layout__main {
-    margin-left: 280px;
-    /* Sidebar width */
+    padding: 1.5rem 2rem 2.75rem;
   }
 
-  .layout__page {
-    padding: var(--space-8) var(--space-6);
-  }
+  /* padding handled by .layout__main now */
 }

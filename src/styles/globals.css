@@ -1,4 +1,5 @@
 @import './variables.css';
+@import './theme.css';
 
 * {
     margin: 0;
@@ -12,10 +13,21 @@ body {
     padding: 0 !important;
     font-family: var(--font-primary);
     background-color: var(--light-background);
-    color: var(--light-background);
+    color: var(--text-color);
     overscroll-behavior: none;
     width: 100%;
+    min-width: 0;
     height: 100%;
+}
+
+#root,
+.layout {
+    width: 100%;
+}
+
+/* Prevent accidental extra space due to scrollbars on some OS */
+body {
+    overflow-x: hidden;
 }
 
 .App {

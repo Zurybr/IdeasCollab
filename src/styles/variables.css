@@ -6,7 +6,9 @@
     /* Layout Dimensions */
     --navbar-height: 4rem;
     --navbar-height-mobile: 3.5rem;
-    --sidebar-width: 320px;
+    /* Sidebar */
+    --sidebar-width: 280px;
+    /* Reduced to reclaim horizontal space */
 
     /* RGB Values for transparency */
     --primary-rgb: 6, 95, 70;
