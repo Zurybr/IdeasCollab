@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { LightBulbIcon } from "../ui";
 import "./Sidebar.css";
 
 interface SidebarProps {
@@ -79,16 +80,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
       <aside className={`sidebar ${isOpen ? "sidebar--open" : ""}`}>
         <div className="sidebar__header">
           <div className="sidebar__brand">
-            <div className="sidebar__brand-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-            </div>
+            <LightBulbIcon size={28} className="sidebar__brand-icon" />
             <span className="sidebar__brand-text">IdeaCollab</span>
           </div>
 
@@ -121,7 +113,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                   onClick={() => handleItemClick(item.href)}
                 >
                   <span className="sidebar__nav-icon">{item.icon}</span>
-                  <span className="sidebar__nav-label">{item.label}</span>
+                  <span className="navbar__nav-link">{item.label}</span>
                   {item.badge && (
                     <span className="sidebar__nav-badge">{item.badge}</span>
                   )}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
+import { LightBulbIcon } from "../ui";
 import "./Navbar.css";
 
 interface NavbarProps {
@@ -56,7 +57,10 @@ export const Navbar = ({ onToggleSidebar }: NavbarProps) => {
 
         {/* Logo */}
         <div className="navbar__logo">
-          <h1 className="navbar__logo-text">IdeaCollab</h1>
+          <a href="/" className="navbar__logo-link">
+            <LightBulbIcon size={28} className="navbar__logo-icon" />
+            <h1 className="navbar__logo-text">IdeaCollab</h1>
+          </a>
         </div>
 
         {/* Desktop Navigation */}
