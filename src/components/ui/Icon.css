@@ -1,0 +1,15 @@
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.icon--lightbulb {
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+}
+
+.icon--lightbulb.visible {
+    opacity: 1;
+}

@@ -1,0 +1,107 @@
+.text {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Sizes */
+.text--xs {
+    font-size: var(--text-xs);
+}
+
+.text--sm {
+    font-size: var(--text-sm);
+}
+
+.text--base {
+    font-size: var(--text-base);
+}
+
+.text--lg {
+    font-size: var(--text-lg);
+}
+
+.text--xl {
+    font-size: var(--text-xl);
+}
+
+.text--2xl {
+    font-size: var(--text-2xl);
+}
+
+.text--3xl {
+    font-size: var(--text-3xl);
+}
+
+.text--4xl {
+    font-size: var(--text-4xl);
+}
+
+.text--5xl {
+    font-size: var(--text-5xl);
+}
+
+.text--6xl {
+    font-size: var(--text-6xl);
+}
+
+/* Weights */
+.text--normal {
+    font-weight: 400;
+}
+
+.text--medium {
+    font-weight: 500;
+}
+
+.text--semibold {
+    font-weight: 600;
+}
+
+.text--bold {
+    font-weight: 700;
+}
+
+.text--black {
+    font-weight: 900;
+}
+
+/* Colors */
+.text--primary {
+    color: var(--text-color);
+}
+
+.text--secondary {
+    color: var(--light-background);
+}
+
+.text--muted {
+    color: rgba(44, 44, 44, 0.6);
+}
+
+/* Alignment */
+.text--left {
+    text-align: left;
+}
+
+.text--center {
+    text-align: center;
+}
+
+.text--right {
+    text-align: right;
+}
+
+/* Special text styles */
+.text--heading {
+    line-height: 1.2;
+    font-weight: 900;
+}
+
+.text--mono {
+    font-family: var(--font-mono);
+}
+
+.text--shadow {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
