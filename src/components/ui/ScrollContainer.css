@@ -9,3 +9,7 @@
     padding: 0;
     pointer-events: none;
 }
+
+.scroll-container.hidden {
+    z-index: -10;
+}

@@ -12,6 +12,13 @@
     transform-style: preserve-3d;
     background-color: var(--dark-background);
     z-index: 10;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.intro-section.hidden {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .circle {

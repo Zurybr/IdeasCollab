@@ -33,7 +33,13 @@ export const MainContent = React.forwardRef<HTMLElement, MainContentProps>(
 
           <div className="main-content__cta">
             <ArrowDown />
-            <Button variant="primary" size="lg">
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => {
+                alert("Get Started clicked!");
+              }}
+            >
               Let's get started!
             </Button>
           </div>

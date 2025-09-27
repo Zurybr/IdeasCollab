@@ -111,14 +111,32 @@ function App() {
         duration: 1.5,
         ease: "power2.inOut",
       });
+      tl.call(
+        () => {
+          // Ocultar completamente la intro section
+          if (introSectionRef.current) {
+            introSectionRef.current.classList.add("hidden");
+          }
+          // Ocultar el scroll container
+          if (scrollContainerRef.current) {
+            scrollContainerRef.current.classList.add("hidden");
+          }
+          // Activar la clase visible en main content
+          if (mainContentRef.current) {
+            mainContentRef.current.classList.add("visible");
+          }
+        },
+        [],
+        "<0.8"
+      );
       tl.to(
         mainContentRef.current,
         {
           opacity: 1,
-          duration: 1,
+          duration: 1.2,
           ease: "power2.out",
         },
-        "<0.5"
+        "<0.2"
       );
     }, mainRef);
 
