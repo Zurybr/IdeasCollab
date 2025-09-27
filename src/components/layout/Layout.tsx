@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Navbar } from "./Navbar";
 import { Sidebar } from "./Sidebar";
 import { Footer } from "./Footer";
@@ -10,29 +9,15 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
-
   return (
     <ThemeProvider>
       <div className="layout">
-        <Navbar onToggleSidebar={toggleSidebar} />
+        <Navbar />
 
         <div className="layout__content">
-          <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+          <Sidebar />
 
-          <main
-            className={`layout__main ${
-              isSidebarOpen ? "layout__main--sidebar-open" : ""
-            }`}
-          >
+          <main className="layout__main">
             {children}
             <Footer />
           </main>

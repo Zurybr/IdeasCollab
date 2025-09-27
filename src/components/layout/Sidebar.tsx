@@ -1,20 +1,15 @@
 import { useState } from "react";
 import "./Sidebar.css";
 
-interface SidebarProps {
-  isOpen: boolean;
-  onClose?: () => void;
-}
-
 interface NavItem {
   icon: React.ReactNode;
   label: string;
   href: string;
   badge?: string;
 }
-
-export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
+export const Sidebar = () => {
   const [activeItem, setActiveItem] = useState("/");
+  const [isOpen, setIsOpen] = useState(true); // abierto por defecto en desktop
 
   const navItems: NavItem[] = [
     {
@@ -67,16 +62,37 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
   const handleItemClick = (href: string) => {
     setActiveItem(href);
-    if (onClose) onClose();
+    if (window.innerWidth < 768) setIsOpen(false);
   };
+
+  const toggle = () => setIsOpen((prev) => !prev);
 
   return (
     <>
       {/* Mobile Overlay */}
-      {isOpen && <div className="sidebar__overlay" onClick={onClose} />}
+      {isOpen && <div className="sidebar__overlay" onClick={toggle} />}
+
+      {/* Botón para abrir/cerrar en mobile */}
+      <button
+        title={isOpen ? "Close sidebar" : "Open sidebar"}
+        aria-label={isOpen ? "Close sidebar" : "Open sidebar"}
+        className="sidebar__toggle-button"
+        onClick={toggle}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </button>
 
       {/* Sidebar */}
-      <aside className={`sidebar ${isOpen ? "sidebar--open" : ""}`}>
+      <aside
+        className={`sidebar ${isOpen ? "sidebar--open" : "sidebar--closed"}`}
+      >
         <div className="sidebar__header">
           <div className="sidebar__header-content">
             <div className="sidebar__toggle-icon">
@@ -95,7 +111,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
             title="Close sidebar"
             aria-label="Close sidebar"
             className="sidebar__close"
-            onClick={onClose}
+            onClick={toggle}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path
