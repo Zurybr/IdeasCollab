@@ -92,7 +92,12 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
             <span className="sidebar__brand-text">IdeaCollab</span>
           </div>
 
-          <button className="sidebar__close lg:hidden" onClick={onClose}>
+          <button
+            title="Close sidebar"
+            aria-label="Close sidebar"
+            className="sidebar__close lg:hidden"
+            onClick={onClose}
+          >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M6 18L18 6M6 6l12 12"
