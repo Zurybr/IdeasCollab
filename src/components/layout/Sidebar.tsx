@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { LightBulbIcon } from "../ui";
 import "./Sidebar.css";
 
 interface SidebarProps {
@@ -79,15 +78,23 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
       {/* Sidebar */}
       <aside className={`sidebar ${isOpen ? "sidebar--open" : ""}`}>
         <div className="sidebar__header">
-          <div className="sidebar__brand">
-            <LightBulbIcon size={28} className="sidebar__brand-icon" />
-            <span className="sidebar__brand-text">IdeaCollab</span>
+          <div className="sidebar__header-content">
+            <div className="sidebar__toggle-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+              </svg>
+            </div>
+            <span className="sidebar__header-title">Menu</span>
           </div>
-
           <button
             title="Close sidebar"
             aria-label="Close sidebar"
-            className="sidebar__close lg:hidden"
+            className="sidebar__close"
             onClick={onClose}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
