@@ -30,12 +30,81 @@ function App() {
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const mainContentRef = useRef<HTMLElement>(null);
 
+  // Control para saber si la animación ya se completó
+  const animationCompletedRef = useRef(false);
+
   useLayoutEffect(() => {
     const handleBeforeUnload = () => window.scrollTo(0, 0);
     window.addEventListener("beforeunload", handleBeforeUnload);
     const enableScrollTimeout = setTimeout(() => {
       document.body.style.overflow = "auto";
     }, 2000);
+
+    // Función para resetear el estado cuando se hace scroll hacia arriba
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      // Solo permitir reset si la animación ya se completó y estamos cerca del top
+      if (scrollY < 100 && animationCompletedRef.current) {
+        // Resetear clases CSS
+        if (introSectionRef.current) {
+          introSectionRef.current.classList.remove("hidden");
+          // Resetear propiedades GSAP
+          gsap.set(introSectionRef.current, {
+            opacity: 1,
+            backgroundColor: "var(--dark-background)",
+          });
+        }
+        if (scrollContainerRef.current) {
+          scrollContainerRef.current.classList.remove("hidden");
+        }
+        if (mainContentRef.current) {
+          mainContentRef.current.classList.remove("visible");
+          // Resetear propiedades GSAP
+          gsap.set(mainContentRef.current, { opacity: 0 });
+        }
+        if (frameRef.current) {
+          // Resetear frame a su estado inicial
+          gsap.set(frameRef.current, {
+            borderColor: "var(--light-background)",
+            boxShadow: "inset 0 0 25px rgba(244, 241, 234, 0.6)",
+          });
+        }
+        if (circleRef.current) {
+          // Resetear círculo
+          gsap.set(circleRef.current, {
+            scale: 1,
+            transform: "translate(-50%, -50%) translateZ(-600px)",
+          });
+        }
+        if (textContainerRef.current) {
+          gsap.set(textContainerRef.current, { opacity: 0 });
+        }
+        if (logoTextRef.current) {
+          gsap.set(logoTextRef.current, { opacity: 0 });
+        }
+        if (logoTypingTextRef.current) {
+          gsap.set(logoTypingTextRef.current, { text: "" });
+        }
+        if (logoCursorRef.current) {
+          gsap.set(logoCursorRef.current, { opacity: 1 });
+        }
+        if (iconFinalRef.current) {
+          gsap.set(iconFinalRef.current, { y: 20, opacity: 0 });
+        }
+        if (scrollIndicatorRef.current) {
+          gsap.set(scrollIndicatorRef.current, { opacity: 1 });
+        }
+        if (typingTextRef.current) {
+          gsap.set(typingTextRef.current, { text: "" });
+        }
+
+        // Resetear la bandera para permitir que la animación funcione de nuevo
+        animationCompletedRef.current = false;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -125,6 +194,8 @@ function App() {
           if (mainContentRef.current) {
             mainContentRef.current.classList.add("visible");
           }
+          // Marcar que la animación se completó
+          animationCompletedRef.current = true;
         },
         [],
         "<0.8"
@@ -144,6 +215,7 @@ function App() {
       ctx.revert();
       clearTimeout(enableScrollTimeout);
       window.removeEventListener("beforeunload", handleBeforeUnload);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
