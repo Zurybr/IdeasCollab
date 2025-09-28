@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { Navbar } from "./Navbar";
 import { Sidebar } from "./Sidebar";
 import { Footer } from "./Footer";
 import { ThemeProvider } from "../../contexts/ThemeContext";
 import "./Layout.css";
+import { useState } from "react";
 
 interface LayoutProps {
   children: React.ReactNode;

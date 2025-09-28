@@ -84,6 +84,32 @@
   letter-spacing: -0.01em;
 }
 
+.sidebar__header-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sidebar__toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--primary)15;
+  border-radius: 0.5rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.sidebar__header-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  letter-spacing: -0.01em;
+}
+
 .sidebar__header::after {
   content: '';
   position: absolute;
@@ -127,8 +153,10 @@
   width: 36px;
   height: 36px;
   background: var(--surface);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 0.5rem;
+  color: var(--text-secondary);
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -418,6 +446,16 @@
 
   .sidebar__footer {
     padding: 1rem;
+  }
+
+  .sidebar__toggle-button {
+    display: block;
+    /* Visible en mobile */
+  }
+
+  .sidebar__close {
+    display: block;
+    /* Asegurarse que el botón de cerrar dentro del sidebar sea visible en mobile */
   }
 
   .sidebar__toggle-button {
