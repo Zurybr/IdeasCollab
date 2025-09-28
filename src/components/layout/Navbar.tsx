@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTheme } from "../../contexts/ThemeContext";
+import { useThemeStore } from "../../store/themeStore";
 import { LightBulbIcon } from "../ui";
 import "./Navbar.css";
 
@@ -9,7 +9,7 @@ interface NavbarProps {
 
 export const Navbar = ({ onToggleSidebar }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useThemeStore();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

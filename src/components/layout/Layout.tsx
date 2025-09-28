@@ -1,7 +1,7 @@
 import { Navbar } from "./Navbar";
 import { Sidebar } from "./Sidebar";
 import { Footer } from "./Footer";
-import { ThemeProvider } from "../../contexts/ThemeContext";
+// Theme provider removed as we're using Zustand for global state
 import "./Layout.css";
 import { useState } from "react";
 
@@ -17,19 +17,15 @@ export const Layout = ({ children }: LayoutProps) => {
   };
 
   return (
-    <ThemeProvider>
-      <div
-        className={`layout ${
-          isSidebarOpen ? "sidebar-open" : "sidebar-closed"
-        }`}
-      >
-        <Navbar onToggleSidebar={toggleSidebar} />
-        <Sidebar isOpen={isSidebarOpen} onToggle={toggleSidebar} />
-        <main className="layout__main">
-          <div className="layout__main-content">{children}</div>
-          <Footer />
-        </main>
-      </div>
-    </ThemeProvider>
+    <div
+      className={`layout ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}
+    >
+      <Navbar onToggleSidebar={toggleSidebar} />
+      <Sidebar isOpen={isSidebarOpen} onToggle={toggleSidebar} />
+      <main className="layout__main">
+        <div className="layout__main-content">{children}</div>
+        <Footer />
+      </main>
+    </div>
   );
 };
