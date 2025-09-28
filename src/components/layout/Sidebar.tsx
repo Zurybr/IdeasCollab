@@ -1,11 +1,5 @@
 import { useState } from "react";
-import { LightBulbIcon } from "../ui";
 import "./Sidebar.css";
-
-interface SidebarProps {
-  isOpen: boolean;
-  onClose?: () => void;
-}
 
 interface NavItem {
   icon: React.ReactNode;
@@ -13,8 +7,12 @@ interface NavItem {
   href: string;
   badge?: string;
 }
+interface SidebarProps {
+  isOpen: boolean;
+  onToggle: () => void;
+}
 
-export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
+export const Sidebar = ({ isOpen, onToggle }: SidebarProps) => {
   const [activeItem, setActiveItem] = useState("/");
 
   const navItems: NavItem[] = [
@@ -68,35 +66,57 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
   const handleItemClick = (href: string) => {
     setActiveItem(href);
-    if (onClose) onClose();
+    if (window.innerWidth < 768) onToggle();
   };
 
   return (
     <>
       {/* Mobile Overlay */}
-      {isOpen && <div className="sidebar__overlay" onClick={onClose} />}
+      {isOpen && <div className="sidebar__overlay" onClick={onToggle} />}
+
+      {/* Botón para abrir/cerrar en mobile */}
+      <button
+        title={isOpen ? "Close sidebar" : "Open sidebar"}
+        aria-label={isOpen ? "Close sidebar" : "Open sidebar"}
+        className="sidebar__toggle-button"
+        onClick={onToggle}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </button>
 
       {/* Sidebar */}
-      <aside className={`sidebar ${isOpen ? "sidebar--open" : ""}`}>
+      <aside
+        className={`sidebar ${isOpen ? "sidebar--open" : "sidebar--closed"}`}
+      >
         <div className="sidebar__header">
-          <div className="sidebar__brand">
-            <LightBulbIcon size={28} className="sidebar__brand-icon" />
-            <span className="sidebar__brand-text">IdeaCollab</span>
+          <div className="sidebar__header-content">
+            <div className="sidebar__toggle-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+              </svg>
+            </div>
+            <span className="sidebar__header-title">Menu</span>
           </div>
-
           <button
             title="Close sidebar"
             aria-label="Close sidebar"
-            className="sidebar__close lg:hidden"
-            onClick={onClose}
+            className="sidebar__close"
+            onClick={onToggle}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M6 18L18 6M6 6l12 12"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
             </svg>
           </button>
         </div>

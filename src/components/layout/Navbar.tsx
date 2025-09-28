@@ -4,7 +4,7 @@ import { LightBulbIcon } from "../ui";
 import "./Navbar.css";
 
 interface NavbarProps {
-  onToggleSidebar?: () => void;
+  onToggleSidebar: () => void;
 }
 
 export const Navbar = ({ onToggleSidebar }: NavbarProps) => {
@@ -18,18 +18,23 @@ export const Navbar = ({ onToggleSidebar }: NavbarProps) => {
   return (
     <nav className="navbar">
       <div className="navbar__container">
-        {/* Mobile menu button & Sidebar toggle */}
+        {/* Mobile controls */}
         <div className="navbar__mobile-controls">
+          {/* Sidebar toggle button */}
           <button
             className="navbar__sidebar-toggle"
             onClick={onToggleSidebar}
             aria-label="Toggle sidebar"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M3 8V6h18v2H3zm0 5h18v-2H3v2zm0 5h18v-2H3v2z"
+              />
             </svg>
           </button>
-
+          {/* Menu toggle button */}
           <button
             className="navbar__menu-toggle md:hidden"
             onClick={toggleMenu}

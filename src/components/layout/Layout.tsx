@@ -10,33 +10,25 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
-
   return (
     <ThemeProvider>
-      <div className="layout">
+      <div
+        className={`layout ${
+          isSidebarOpen ? "sidebar-open" : "sidebar-closed"
+        }`}
+      >
         <Navbar onToggleSidebar={toggleSidebar} />
-
-        <div className="layout__content">
-          <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
-
-          <main
-            className={`layout__main ${
-              isSidebarOpen ? "layout__main--sidebar-open" : ""
-            }`}
-          >
-            {children}
-            <Footer />
-          </main>
-        </div>
+        <Sidebar isOpen={isSidebarOpen} onToggle={toggleSidebar} />
+        <main className="layout__main">
+          <div className="layout__main-content">{children}</div>
+          <Footer />
+        </main>
       </div>
     </ThemeProvider>
   );

@@ -2,6 +2,32 @@
 /*                              SIDEBAR COMPONENT                                  */
 /*=================================================================================*/
 
+/* Mobile First - Base Styles */
+.sidebar {
+  width: var(--sidebar-width);
+  max-width: 85vw;
+  height: 100%;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all var(--transition-speed) ease;
+  will-change: transform, width, opacity, visibility;
+  transform: translateX(-100%);
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    max-width: var(--sidebar-width);
+    transform: translateX(0);
+    transition: transform var(--transition-speed) ease,
+      width var(--transition-speed) ease,
+      opacity var(--transition-speed) ease,
+      visibility var(--transition-speed) ease;
+  }
+}
+
 .sidebar__overlay {
   position: fixed;
   top: 0;
@@ -10,35 +36,11 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
   z-index: 999;
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.sidebar__overlay--visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.sidebar {
-  width: var(--sidebar-width);
-  flex: 0 0 var(--sidebar-width);
-  background: var(--surface);
-  border-right: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  position: sticky;
-  top: var(--navbar-height);
-  height: calc(100vh - var(--navbar-height));
-  transition: width var(--transition-normal), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 10;
-}
-
-.sidebar--open {
-  transform: translateX(0);
+  transition: all var(--transition-speed) ease;
 }
 
 /*=================================================================================*/
@@ -54,6 +56,32 @@
   background: var(--background);
   position: relative;
   min-height: 3.25rem;
+}
+
+.sidebar__header-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sidebar__toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--primary)15;
+  border-radius: 0.5rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.sidebar__header-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  letter-spacing: -0.01em;
 }
 
 .sidebar__header::after {
@@ -98,10 +126,10 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  background: var(--background);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 0.5rem;
-  color: var(--text);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -391,12 +419,41 @@
   .sidebar__footer {
     padding: 1rem;
   }
+
+  .sidebar__toggle-button {
+    display: block;
+    /* Visible en mobile */
+  }
+
+  .sidebar__close {
+    display: block;
+    /* Asegurarse que el botón de cerrar dentro del sidebar sea visible en mobile */
+  }
 }
 
-/* Tablet and above - Fixed sidebar option */
+/* Tablet and above - Sidebar pushes content */
 @media (min-width: 1024px) {
   .sidebar {
+    position: sticky;
+    top: var(--navbar-height);
+    height: calc(100vh - var(--navbar-height));
+    width: 0;
+    /* closed: no width */
+    flex: 0 0 0;
+    /* don't reserve space when closed */
+    overflow: hidden;
     transform: none !important;
+  }
+
+  .sidebar--open {
+    width: var(--sidebar-width);
+    /* open: full width */
+    flex: 0 0 var(--sidebar-width);
+  }
+
+  /* No overlay needed on desktop */
+  .sidebar__overlay {
+    display: none;
   }
 }
 
@@ -459,20 +516,5 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* Brand icon pulse */
-.sidebar__brand-icon {
-  animation: iconPulse 2s ease-in-out infinite alternate;
-}
-
-@keyframes iconPulse {
-  from {
-    box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.4);
-  }
-
-  to {
-    box-shadow: 0 0 0 8px rgba(var(--primary-rgb), 0);
   }
 }
