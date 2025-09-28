@@ -67,6 +67,7 @@ export const NavHero = () => {
           <NavLink to="/solutions">Solutions</NavLink>
           <NavLink to="/resources">Resources</NavLink>
           <NavLink to="/pricing">Pricing</NavLink>
+          <NavLink to="/contact">Contact Us</NavLink>
         </div>
 
         <div className="nav-hero__auth">

@@ -1,17 +1,22 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router";
-import { NavHero } from "../../components/NavHero";
-import "./Auth.css";
+// pages/ContactUs.tsx
 
-export const SignUp = () => {
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import { NavHero } from "../components/NavHero";
+import "./auth/Auth.css"; // Reutilizamos los estilos de autenticación
+
+export const ContactUs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Sign up attempt:", { name, email, password });
+    // Aquí iría la lógica para enviar el mensaje (ej. a una API o servicio de email)
+    console.log("Contact form submitted:", { name, email, message });
+    alert("Thank you for your message! We'll get back to you soon.");
+    navigate("/"); // Redirige al inicio después de enviar
   };
 
   return (
@@ -19,7 +24,7 @@ export const SignUp = () => {
       <NavHero />
       <div className="auth-container">
         <div className="auth-card">
-          {/* --- BOTONES DE MAC AÑADIDOS --- */}
+          {/* --- Botones de Mac --- */}
           <div className="mac-header">
             <span className="mac-dot red"></span>
             <span className="mac-dot yellow"></span>
@@ -27,8 +32,8 @@ export const SignUp = () => {
           </div>
 
           <div className="auth-header">
-            <h2 className="auth-title">IdeaCollab AI</h2>
-            <p className="auth-subtitle">Create your Account</p>
+            <h2 className="auth-title">Contact Us</h2>
+            <p className="auth-subtitle">We'd love to hear from you</p>
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -53,25 +58,19 @@ export const SignUp = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="password">PASSWORD</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+              <label htmlFor="message">MESSAGE</label>
+              <textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                rows={5}
                 required
               />
             </div>
             <button type="submit" className="btn btn-primary auth-btn">
-              Sign Up
+              Send Message
             </button>
           </form>
-
-          <div className="auth-switch">
-            <p>
-              Already have an account? <Link to="/login">Log in</Link>
-            </p>
-          </div>
         </div>
       </div>
     </>

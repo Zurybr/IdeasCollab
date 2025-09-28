@@ -232,7 +232,7 @@ export const Hero = () => {
             </div>
 
             <section className="features-grid">
-              <div className="feature-card">
+              <div className="feature-card2">
                 <BrainIcon size={32} className="feature-icon" />
                 <h3 className="card-title">Smart Team Assignment</h3>
                 <p className="card-description">
@@ -240,7 +240,7 @@ export const Hero = () => {
                   to create optimal team compositions automatically.
                 </p>
               </div>
-              <div className="feature-card">
+              <div className="feature-card2">
                 <ClockIcon size={32} className="feature-icon" />
                 <h3 className="card-title">Workload Balancing</h3>
                 <p className="card-description">
@@ -248,7 +248,7 @@ export const Hero = () => {
                   intelligent workload management system.
                 </p>
               </div>
-              <div className="feature-card">
+              <div className="feature-card2">
                 <ActivityIcon size={32} className="feature-icon" />
                 <h3 className="card-title">Performance Analytics</h3>
                 <p className="card-description">
@@ -269,29 +269,56 @@ export const Hero = () => {
               collaboration.
             </p>
             <section className="features-grid">
-              <div className="feature-card">
-                <PackageIcon size={32} className="feature-icon" />
-                <h3 className="card-title">AI Team Assembler</h3>
-                <p className="card-description">
-                  Dynamically creates the perfect team for any project based on
-                  skills, workload, and synergy.
-                </p>
+              <div className="feature-card2">
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                </div>
+                <div className="feature-card-body">
+                  <PackageIcon size={32} className="feature-icon" />
+                  <h3 className="card-title">AI Team Assembler</h3>
+                  <p className="card-description">
+                    Dynamically creates the perfect team for any project based
+                    on skills, workload, and synergy.
+                  </p>
+                </div>
               </div>
-              <div className="feature-card">
-                <PackageIcon size={32} className="feature-icon" />
-                <h3 className="card-title">Predictive Planner</h3>
-                <p className="card-description">
-                  Forecasts project timelines and potential bottlenecks using
-                  machine learning algorithms.
-                </p>
+              <div className="feature-card2">
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                </div>
+                <div className="feature-card-body">
+                  <PackageIcon size={32} className="feature-icon" />
+                  <h3 className="card-title">Predictive Planner</h3>
+                  <p className="card-description">
+                    Forecasts project timelines and potential bottlenecks using
+                    machine learning algorithms.
+                  </p>
+                </div>
               </div>
-              <div className="feature-card">
-                <PackageIcon size={32} className="feature-icon" />
-                <h3 className="card-title">Performance Hub</h3>
-                <p className="card-description">
-                  Centralized dashboard for real-time analytics and actionable
-                  insights on team performance.
-                </p>
+              <div className="feature-card2">
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                </div>
+                <div className="feature-card-body">
+                  <PackageIcon size={32} className="feature-icon" />
+                  <h3 className="card-title">Performance Hub</h3>
+                  <p className="card-description">
+                    Centralized dashboard for real-time analytics and actionable
+                    insights on team performance.
+                  </p>
+                </div>
               </div>
             </section>
           </div>
@@ -306,29 +333,56 @@ export const Hero = () => {
               business sector.
             </p>
             <section className="features-grid">
-              <div className="feature-card">
-                <TargetIcon size={32} className="feature-icon" />
-                <h3 className="card-title">For Tech Startups</h3>
-                <p className="card-description">
-                  Accelerate development cycles and optimize resource allocation
-                  in fast-paced environments.
-                </p>
+              <div className="feature-card2">
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                </div>
+                <div className="feature-card-body">
+                  <TargetIcon size={32} className="feature-icon" />
+                  <h3 className="card-title">For Tech Startups</h3>
+                  <p className="card-description">
+                    Accelerate development cycles and optimize resource
+                    allocation in fast-paced environments.
+                  </p>
+                </div>
               </div>
-              <div className="feature-card">
-                <TargetIcon size={32} className="feature-icon" />
-                <h3 className="card-title">For Creative Agencies</h3>
-                <p className="card-description">
-                  Enhance collaboration on creative projects and balance artist
-                  workloads effectively.
-                </p>
+              <div className="feature-card2">
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                </div>
+                <div className="feature-card-body">
+                  <TargetIcon size={32} className="feature-icon" />
+                  <h3 className="card-title">For Creative Agencies</h3>
+                  <p className="card-description">
+                    Enhance collaboration on creative projects and balance
+                    artist workloads effectively.
+                  </p>
+                </div>
               </div>
-              <div className="feature-card">
-                <TargetIcon size={32} className="feature-icon" />
-                <h3 className="card-title">For Enterprise</h3>
-                <p className="card-description">
-                  Scale team management across large organizations with robust
-                  analytics and integration.
-                </p>
+              <div className="feature-card2">
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                </div>
+                <div className="feature-card-body">
+                  <TargetIcon size={32} className="feature-icon" />
+                  <h3 className="card-title">For Enterprise</h3>
+                  <p className="card-description">
+                    Scale team management across large organizations with robust
+                    analytics and integration.
+                  </p>
+                </div>
               </div>
             </section>
           </div>
@@ -343,36 +397,64 @@ export const Hero = () => {
               out of IdeaCollab AI.
             </p>
             <section className="features-grid">
-              <div className="feature-card">
-                <BookOpenIcon size={32} className="feature-icon" />
-                <h3 className="card-title">Blog</h3>
-                <p className="card-description">
-                  Read the latest on AI, team management, and productivity
-                  trends from our experts.
-                </p>
+              <div className="feature-card2">
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                </div>
+                <div className="feature-card-body">
+                  <BookOpenIcon size={32} className="feature-icon" />
+                  <h3 className="card-title">Blog</h3>
+                  <p className="card-description">
+                    Read the latest on AI, team management, and productivity
+                    trends from our experts.
+                  </p>
+                </div>
               </div>
-              <div className="feature-card">
-                <BookOpenIcon size={32} className="feature-icon" />
-                <h3 className="card-title">Documentation</h3>
-                <p className="card-description">
-                  In-depth guides and API references for integrating and
-                  customizing our tools.
-                </p>
+              <div className="feature-card2">
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                </div>
+                <div className="feature-card-body">
+                  <BookOpenIcon size={32} className="feature-icon" />
+                  <h3 className="card-title">Documentation</h3>
+                  <p className="card-description">
+                    In-depth guides and API references for integrating and
+                    customizing our tools.
+                  </p>
+                </div>
               </div>
-              <div className="feature-card">
-                <BookOpenIcon size={32} className="feature-icon" />
-                <h3 className="card-title">Case Studies</h3>
-                <p className="card-description">
-                  Discover how leading companies are achieving success with
-                  IdeaCollab AI.
-                </p>
+              <div className="feature-card2">
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                </div>
+                <div className="feature-card-body">
+                  <BookOpenIcon size={32} className="feature-icon" />
+                  <h3 className="card-title">Case Studies</h3>
+                  <p className="card-description">
+                    Discover how leading companies are achieving success with
+                    IdeaCollab AI.
+                  </p>
+                </div>
               </div>
             </section>
           </div>
         </section>
 
         {/* --- SECCIÓN 5: PRICING --- */}
-        <section id="pricing" className="hero-section">
+        {/* --- SECCIÓN 5: PRICING (VERSIÓN FINAL) --- */}
+        <section id="pricing" className="hero-section alt-bg">
           <div className="hero-content">
             <h1 className="hero-title">Simple, Transparent Pricing</h1>
             <p className="hero-subtitle">
@@ -381,86 +463,126 @@ export const Hero = () => {
             <div className="pricing-grid">
               {/* --- CARD 1: Starter --- */}
               <div className="pricing-card">
-                <h3 className="pricing-tier">Starter</h3>
-                <p className="pricing-price">
-                  $0 <span>/ month</span>
-                </p>
-                <p className="pricing-description">
-                  For individuals and small teams just getting started.
-                </p>
-                <ul className="pricing-features">
-                  <li>
-                    <CheckIcon size={16} /> Up to 5 users
-                  </li>
-                  <li>
-                    <CheckIcon size={16} /> Basic analytics
-                  </li>
-                  <li>
-                    <CheckIcon size={16} /> Community support
-                  </li>
-                </ul>
-                <a
-                  href="/try-for-free"
-                  className="btn btn-secondary pricing-btn"
-                >
-                  Get Started
-                </a>
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                </div>
+                <div className="pricing-body">
+                  <h3 className="pricing-tier">Starter</h3>
+                  <p className="pricing-price">
+                    $0 <span>/ month</span>
+                  </p>
+                  <p className="pricing-description">
+                    For individuals and small teams just getting started.
+                  </p>
+                  <ul className="pricing-features">
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" /> Up to
+                      5 users
+                    </li>
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" /> Basic
+                      analytics
+                    </li>
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      Community support
+                    </li>
+                  </ul>
+                  <a
+                    href="/try-for-free"
+                    className="btn btn-secondary pricing-btn"
+                  >
+                    Get Started
+                  </a>
+                </div>
               </div>
 
-              {/* --- CARD 2: Pro (Destacado) --- */}
+              {/* --- CARD 2: Pro --- */}
               <div className="pricing-card featured">
-                <div className="featured-badge">Most Popular</div>
-                <h3 className="pricing-tier">Pro</h3>
-                <p className="pricing-price">
-                  $20 <span>/ user / month</span>
-                </p>
-                <p className="pricing-description">
-                  For growing teams that need advanced features.
-                </p>
-                <ul className="pricing-features">
-                  <li>
-                    <CheckIcon size={16} /> Unlimited users
-                  </li>
-                  <li>
-                    <CheckIcon size={16} /> Advanced AI analytics
-                  </li>
-                  <li>
-                    <CheckIcon size={16} /> Priority support
-                  </li>
-                  <li>
-                    <CheckIcon size={16} /> API access
-                  </li>
-                </ul>
-                <a href="/try-for-free" className="btn btn-primary pricing-btn">
-                  Try for Free
-                </a>
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                  <div className="featured-badge">Most Popular</div>
+                </div>
+                <div className="pricing-body">
+                  <h3 className="pricing-tier">Pro</h3>
+                  <p className="pricing-price">
+                    $20 <span>/ user / month</span>
+                  </p>
+                  <p className="pricing-description">
+                    For growing teams that need advanced features.
+                  </p>
+                  <ul className="pricing-features">
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      Unlimited users
+                    </li>
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      Advanced AI analytics
+                    </li>
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      Priority support
+                    </li>
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" /> API
+                      access
+                    </li>
+                  </ul>
+                  <a
+                    href="/try-for-free"
+                    className="btn btn-primary pricing-btn"
+                  >
+                    Try for Free
+                  </a>
+                </div>
               </div>
 
               {/* --- CARD 3: Enterprise --- */}
               <div className="pricing-card">
-                <h3 className="pricing-tier">Enterprise</h3>
-                <p className="pricing-price">Custom</p>
-                <p className="pricing-description">
-                  For large organizations with specific security and support
-                  needs.
-                </p>
-                <ul className="pricing-features">
-                  <li>
-                    <CheckIcon size={16} /> All Pro features
-                  </li>
-                  <li>
-                    <CheckIcon size={16} /> Dedicated account manager
-                  </li>
-                  <li>
-                    <CheckIcon size={16} /> SSO and advanced security
-                  </li>
-                </ul>
-                <a
-                  href="/contact-sales"
-                  className="btn btn-secondary pricing-btn"
-                >
-                  Contact Sales
-                </a>
+                <div className="mac-header">
+                  <div className="mac-dots">
+                    <span className="mac-dot red"></span>
+                    <span className="mac-dot yellow"></span>
+                    <span className="mac-dot green"></span>
+                  </div>
+                </div>
+                <div className="pricing-body">
+                  <h3 className="pricing-tier">Enterprise</h3>
+                  <p className="pricing-price">Custom</p>
+                  <p className="pricing-description">
+                    For large organizations with specific security and support
+                    needs.
+                  </p>
+                  <ul className="pricing-features">
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" /> All
+                      Pro features
+                    </li>
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      Dedicated account manager
+                    </li>
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" /> SSO
+                      and advanced security
+                    </li>
+                  </ul>
+                  <a
+                    href="/contact-sales"
+                    className="btn btn-secondary pricing-btn"
+                  >
+                    Contact Sales
+                  </a>
+                </div>
               </div>
             </div>
           </div>
