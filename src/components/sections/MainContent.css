@@ -3,14 +3,14 @@
 /*=================================================================================*/
 
 .main-content {
-    height: 100%;
+    min-height: 100vh;
     background: var(--light-background);
     color: var(--text-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 2rem;
     position: relative;
     text-align: center;
     width: 100%;
