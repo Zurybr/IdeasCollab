@@ -69,6 +69,7 @@ p {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border: 2px solid #007bff;
+    text-decoration: none;
 }
 
 .hero-actions .btn-primary {
@@ -139,12 +140,10 @@ p {
     background-color: #27c93f;
 }
 
-
-/* --- ✨ NUEVOS ESTILOS PARA LA INTERFAZ DE WEBAPP --- */
+/* --- Webapp Interface --- */
 .webapp-body {
     padding: 1.5rem;
     text-align: left;
-    /* Usamos una fuente de sistema UI para que se vea como una app real */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: #e0e0e0;
 }
@@ -190,7 +189,6 @@ p {
     margin: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Dos columnas */
     gap: 0.75rem;
 }
 
@@ -204,7 +202,6 @@ p {
 
 .capability-icon {
     color: #27c93f;
-    /* Verde para el checkmark */
 }
 
 .webapp-status {
@@ -312,14 +309,116 @@ p {
     color: #ffffff;
 }
 
-/* --- Media Queries para Responsive --- */
+.footer-debug-reset {
+    margin-top: 0.5rem;
+}
+
+/* --- ✨ NUEVOS ESTILOS AÑADIDOS --- */
+
+/* Fondo alterno para dar contraste entre secciones */
+.hero-section.alt-bg {
+    background-color: #ffffff;
+}
+
+/* Estilos específicos para la tabla de precios */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 3rem;
+}
+
+.pricing-card {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.featured {
+    border-color: #007bff;
+    border-width: 3px;
+    transform: translateY(-10px);
+}
+
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.pricing-tier {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.pricing-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.pricing-price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+}
+
+.pricing-description {
+    margin-bottom: 2rem;
+    color: #555;
+    min-height: 40px;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    flex-grow: 1;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.pricing-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* --- Media Queries --- */
 @media (max-width: 500px) {
     .capabilities-list {
         grid-template-columns: 1fr;
-        /* Una columna en móviles muy pequeños */
     }
 }
-
 
 @media (min-width: 768px) {
     .hero-title {
@@ -337,6 +436,10 @@ p {
     .footer-content {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
