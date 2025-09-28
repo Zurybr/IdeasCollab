@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router";
 import { LightBulbIcon } from "./ui"; // Asegúrate que la ruta a tu ícono sea correcta
 import { useI18n } from "../stores/i18n";
@@ -10,6 +10,29 @@ interface IconProps {
   size?: number;
   className?: string;
 }
+
+// --- Definición de Tipos para los Íconos ---
+interface IconProps {
+  size?: number;
+  className?: string;
+}
+
+const ChevronDownIcon = ({ size = 16, className = "" }: IconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+);
 
 // --- Componente del Ícono del Menú (Hamburguesa) ---
 const MenuIcon = ({ size = 24, className = "" }: IconProps) => (
@@ -49,11 +72,69 @@ const CloseIcon = ({ size = 24, className = "" }: IconProps) => (
     <line x1="6" y1="6" x2="18" y2="18"></line>
   </svg>
 );
+// --- ✨ NUEVO: Componente LanguageSelector ---
+const LanguageSelector = () => {
+  const { locale, setLocale } = useI18n();
+  const [isOpen, setIsOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
+  // Hook para cerrar el dropdown si se hace clic fuera de él
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [wrapperRef]);
+
+  const handleSelect = (lang: "es_mx" | "en_us") => {
+    setLocale(lang);
+    setIsOpen(false);
+  };
+
+  return (
+    <div className="language-selector" ref={wrapperRef}>
+      <button
+        className="language-selector__trigger"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-haspopup="true"
+      >
+        <span>{locale === "es_mx" ? "MX" : "EN"}</span>
+        <ChevronDownIcon className="language-selector__icon" />
+      </button>
+
+      {isOpen && (
+        <div className="language-selector__dropdown" role="menu">
+          <button
+            className="language-selector__option"
+            onClick={() => handleSelect("es_mx")}
+            role="menuitem"
+          >
+            MX
+          </button>
+          <button
+            className="language-selector__option"
+            onClick={() => handleSelect("en_us")}
+            role="menuitem"
+          >
+            EN
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
 // --- Componente Principal: NavHero ---
 export const NavHero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t, locale, setLocale } = useI18n();
+  const { t } = useI18n();
 
   return (
     <nav className="nav-hero">
@@ -80,16 +161,7 @@ export const NavHero = () => {
           <label htmlFor="lang-select" style={{ fontSize: 12 }}>
             {t("navhero.language")}:
           </label>
-          <select
-            id="lang-select"
-            value={locale}
-            onChange={(e) => setLocale(e.target.value as any)}
-            style={{ padding: "0.25rem 0.5rem", borderRadius: 6 }}
-            aria-label={t("navhero.language")}
-          >
-            <option value="es_mx">{t("navhero.mx")}</option>
-            <option value="en_us">{t("navhero.us")}</option>
-          </select>
+          <LanguageSelector />
 
           <NavLink to="/login" className="btn btn-text">
             {t("navhero.login")}

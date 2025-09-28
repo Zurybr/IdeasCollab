@@ -155,3 +155,82 @@
         display: none;
     }
 }
+
+/* --- ✨ NUEVO: Estilos para el Language Selector Personalizado --- */
+
+.language-selector {
+    position: relative;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+/* El botón que muestra el idioma actual (MX o EN) */
+.language-selector__trigger {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    /* Espacio entre texto e ícono */
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #333;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.language-selector__trigger:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Un sutil hover para feedback */
+}
+
+.language-selector__icon {
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Gira el ícono cuando el menú está abierto */
+.language-selector__trigger[aria-expanded="true"] .language-selector__icon {
+    transform: rotate(180deg);
+}
+
+/* El menú desplegable */
+.language-selector__dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    /* Un poco de espacio debajo del botón */
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 120;
+    min-width: 80px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cada opción dentro del menú */
+.language-selector__option {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.language-selector__option:hover {
+    background-color: #f5f5f5;
+    /* Color de fondo al pasar el mouse */
+    color: #007bff;
+}
+
+/* Ajusta el gap en la sección de autenticación si es necesario */
+.nav-hero__auth {
+    gap: 0.5rem;
+    /* Puedes ajustar este valor */
+}
