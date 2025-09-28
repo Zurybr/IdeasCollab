@@ -1,15 +1,13 @@
-// Hero.tsx (VERSIÓN FINAL)
-
 import { useEffect } from "react";
-import { useLocation } from "react-router";
-import { Button } from "../components/ui/Button";
+import { useLocation, useNavigate } from "react-router";
+import { Button } from "../components/ui/Button"; // Asumo que este componente existe
 import { NavHero } from "../components/NavHero";
-import "./Hero.css";
-import { useNavigate } from "react-router";
 import { useI18n } from "../stores/i18n";
+import "./Hero.css";
 
-// --- Tipos y Íconos (con los nuevos añadidos) ---
+// --- Íconos ---
 type IconProps = { size?: number; className?: string };
+
 const BrainIcon: React.FC<IconProps> = ({ size = 24, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -137,11 +135,12 @@ export const Hero = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useI18n();
+
   const handleClearOnboarding = () => {
     try {
       localStorage.removeItem("userOnboarded");
       localStorage.removeItem("onboardingDate");
-      navigate("/landing"); // Redirige a landing
+      navigate("/landing");
       requestAnimationFrame(() => {
         window.scrollTo({
           top: 0,
@@ -169,15 +168,12 @@ export const Hero = () => {
   return (
     <>
       <NavHero />
-      {/* Solo una etiqueta <main> para toda la página */}
       <main>
-        {/* --- SECCIÓN 1: HERO (Tu código original) --- */}
+        {/* --- SECCIÓN 1: HERO --- */}
         <section className="hero-section">
           <div className="hero-content">
             <h1 className="hero-title">{t("heroPage.heroTitle")}</h1>
-            <p className="hero-subtitle">
-              {t("heroPage.heroSubtitle")}
-            </p>
+            <p className="hero-subtitle">{t("heroPage.heroSubtitle")}</p>
             <div className="hero-actions">
               <a href="/try-for-free" className="btn btn-primary">
                 {t("heroPage.tryFree")}
@@ -194,28 +190,33 @@ export const Hero = () => {
                   <span className="mac-dot yellow"></span>
                   <span className="mac-dot green"></span>
                 </div>
-                {/* ✨ CAMBIO: Interfaz de Webapp en lugar de código */}
                 <div className="webapp-body">
                   <div className="webapp-header">
-                    <div className="webapp-title">{t("heroPage.webappTitle")}</div>
-                    <div className="webapp-role">
-                      {t("heroPage.role")}
+                    <div className="webapp-title">
+                      {t("heroPage.webappTitle")}
                     </div>
+                    <div className="webapp-role">{t("heroPage.role")}</div>
                   </div>
                   <div className="webapp-capabilities">
-                    <div className="capabilities-title">{t("heroPage.capabilities")}</div>
+                    <div className="capabilities-title">
+                      {t("heroPage.capabilities")}
+                    </div>
                     <ul className="capabilities-list">
                       <li className="capability-item">
-                        <CheckIcon className="capability-icon" /> {t("heroPage.cap1")}
+                        <CheckIcon className="capability-icon" />{" "}
+                        {t("heroPage.cap1")}
                       </li>
                       <li className="capability-item">
-                        <CheckIcon className="capability-icon" /> {t("heroPage.cap2")}
+                        <CheckIcon className="capability-icon" />{" "}
+                        {t("heroPage.cap2")}
                       </li>
                       <li className="capability-item">
-                        <CheckIcon className="capability-icon" /> {t("heroPage.cap3")}
+                        <CheckIcon className="capability-icon" />{" "}
+                        {t("heroPage.cap3")}
                       </li>
                       <li className="capability-item">
-                        <CheckIcon className="capability-icon" /> {t("heroPage.cap4")}
+                        <CheckIcon className="capability-icon" />{" "}
+                        {t("heroPage.cap4")}
                       </li>
                     </ul>
                   </div>
@@ -230,21 +231,27 @@ export const Hero = () => {
             <section className="features-grid">
               <div className="feature-card2">
                 <BrainIcon size={32} className="feature-icon" />
-                <h3 className="card-title">{t("heroPage.features.smartTitle")}</h3>
+                <h3 className="card-title">
+                  {t("heroPage.features.smartTitle")}
+                </h3>
                 <p className="card-description">
                   {t("heroPage.features.smartDesc")}
                 </p>
               </div>
               <div className="feature-card2">
                 <ClockIcon size={32} className="feature-icon" />
-                <h3 className="card-title">{t("heroPage.features.workloadTitle")}</h3>
+                <h3 className="card-title">
+                  {t("heroPage.features.workloadTitle")}
+                </h3>
                 <p className="card-description">
                   {t("heroPage.features.workloadDesc")}
                 </p>
               </div>
               <div className="feature-card2">
                 <ActivityIcon size={32} className="feature-icon" />
-                <h3 className="card-title">{t("heroPage.features.analyticsTitle")}</h3>
+                <h3 className="card-title">
+                  {t("heroPage.features.analyticsTitle")}
+                </h3>
                 <p className="card-description">
                   {t("heroPage.features.analyticsDesc")}
                 </p>
@@ -257,9 +264,7 @@ export const Hero = () => {
         <section id="products" className="hero-section alt-bg">
           <div className="hero-content">
             <h1 className="hero-title">{t("heroPage.productsTitle")}</h1>
-            <p className="hero-subtitle">
-              {t("heroPage.productsSubtitle")}
-            </p>
+            <p className="hero-subtitle">{t("heroPage.productsSubtitle")}</p>
             <section className="features-grid">
               <div className="feature-card2">
                 <div className="mac-header">
@@ -271,7 +276,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <PackageIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">{t("heroPage.productsList.assemblerTitle")}</h3>
+                  <h3 className="card-title">
+                    {t("heroPage.productsList.assemblerTitle")}
+                  </h3>
                   <p className="card-description">
                     {t("heroPage.productsList.assemblerDesc")}
                   </p>
@@ -287,7 +294,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <PackageIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">{t("heroPage.productsList.plannerTitle")}</h3>
+                  <h3 className="card-title">
+                    {t("heroPage.productsList.plannerTitle")}
+                  </h3>
                   <p className="card-description">
                     {t("heroPage.productsList.plannerDesc")}
                   </p>
@@ -303,7 +312,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <PackageIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">{t("heroPage.productsList.hubTitle")}</h3>
+                  <h3 className="card-title">
+                    {t("heroPage.productsList.hubTitle")}
+                  </h3>
                   <p className="card-description">
                     {t("heroPage.productsList.hubDesc")}
                   </p>
@@ -317,9 +328,7 @@ export const Hero = () => {
         <section id="solutions" className="hero-section">
           <div className="hero-content">
             <h1 className="hero-title">{t("heroPage.solutionsTitle")}</h1>
-            <p className="hero-subtitle">
-              {t("heroPage.solutionsSubtitle")}
-            </p>
+            <p className="hero-subtitle">{t("heroPage.solutionsSubtitle")}</p>
             <section className="features-grid">
               <div className="feature-card2">
                 <div className="mac-header">
@@ -347,7 +356,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <TargetIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">{t("heroPage.solutions.creative")}</h3>
+                  <h3 className="card-title">
+                    {t("heroPage.solutions.creative")}
+                  </h3>
                   <p className="card-description">
                     {t("heroPage.solutionsDesc.creative")}
                   </p>
@@ -363,7 +374,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <TargetIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">{t("heroPage.solutions.enterprise")}</h3>
+                  <h3 className="card-title">
+                    {t("heroPage.solutions.enterprise")}
+                  </h3>
                   <p className="card-description">
                     {t("heroPage.solutionsDesc.enterprise")}
                   </p>
@@ -377,9 +390,7 @@ export const Hero = () => {
         <section id="resources" className="hero-section alt-bg">
           <div className="hero-content">
             <h1 className="hero-title">{t("heroPage.resourcesTitle")}</h1>
-            <p className="hero-subtitle">
-              {t("heroPage.resourcesSubtitle")}
-            </p>
+            <p className="hero-subtitle">{t("heroPage.resourcesSubtitle")}</p>
             <section className="features-grid">
               <div className="feature-card2">
                 <div className="mac-header">
@@ -391,7 +402,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <BookOpenIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">{t("heroPage.resourcesList.blogTitle")}</h3>
+                  <h3 className="card-title">
+                    {t("heroPage.resourcesList.blogTitle")}
+                  </h3>
                   <p className="card-description">
                     {t("heroPage.resourcesList.blogDesc")}
                   </p>
@@ -407,7 +420,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <BookOpenIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">{t("heroPage.resourcesList.docsTitle")}</h3>
+                  <h3 className="card-title">
+                    {t("heroPage.resourcesList.docsTitle")}
+                  </h3>
                   <p className="card-description">
                     {t("heroPage.resourcesList.docsDesc")}
                   </p>
@@ -423,7 +438,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <BookOpenIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">{t("heroPage.resourcesList.caseTitle")}</h3>
+                  <h3 className="card-title">
+                    {t("heroPage.resourcesList.caseTitle")}
+                  </h3>
                   <p className="card-description">
                     {t("heroPage.resourcesList.caseDesc")}
                   </p>
@@ -434,15 +451,12 @@ export const Hero = () => {
         </section>
 
         {/* --- SECCIÓN 5: PRICING --- */}
-        {/* --- SECCIÓN 5: PRICING (VERSIÓN FINAL) --- */}
         <section id="pricing" className="hero-section alt-bg">
           <div className="hero-content">
             <h1 className="hero-title">{t("heroPage.pricingTitle")}</h1>
-            <p className="hero-subtitle">
-              {t("heroPage.pricingSubtitle")}
-            </p>
+            <p className="hero-subtitle">{t("heroPage.pricingSubtitle")}</p>
             <div className="pricing-grid">
-              {/* --- CARD 1: Starter --- */}
+              {/* Card 1: Comunidad */}
               <div className="pricing-card">
                 <div className="mac-header">
                   <div className="mac-dots">
@@ -452,22 +466,32 @@ export const Hero = () => {
                   </div>
                 </div>
                 <div className="pricing-body">
-                  <h3 className="pricing-tier">{t("heroPage.pricing.starter.title")}</h3>
+                  <h3 className="pricing-tier">
+                    {t("heroPage.pricing.starter.title")}
+                  </h3>
                   <p className="pricing-price">
-                    {t("heroPage.pricing.starter.price")} <span>{t("heroPage.pricing.starter.per")}</span>
+                    {t("heroPage.pricing.starter.price")}{" "}
+                    <span>{t("heroPage.pricing.starter.per")}</span>
                   </p>
                   <p className="pricing-description">
                     {t("heroPage.pricing.starter.desc")}
                   </p>
                   <ul className="pricing-features">
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.starter.upToUsers", { n: 5 })}
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.starter.publicProjects")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.starter.basicAnalytics")}
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.starter.matchmaking")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.starter.communitySupport")}
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.starter.basicTools")}
+                    </li>
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.starter.tokenLimit")}
                     </li>
                   </ul>
                   <a
@@ -479,7 +503,7 @@ export const Hero = () => {
                 </div>
               </div>
 
-              {/* --- CARD 2: Pro --- */}
+              {/* Card 2: Pro */}
               <div className="pricing-card featured">
                 <div className="mac-header">
                   <div className="mac-dots">
@@ -487,28 +511,41 @@ export const Hero = () => {
                     <span className="mac-dot yellow"></span>
                     <span className="mac-dot green"></span>
                   </div>
-                  <div className="featured-badge">{t("heroPage.pricing.pro.badge")}</div>
+                  <div className="featured-badge">
+                    {t("heroPage.pricing.pro.badge")}
+                  </div>
                 </div>
                 <div className="pricing-body">
-                  <h3 className="pricing-tier">{t("heroPage.pricing.pro.title")}</h3>
+                  <h3 className="pricing-tier">
+                    {t("heroPage.pricing.pro.title")}
+                  </h3>
                   <p className="pricing-price">
-                    {t("heroPage.pricing.pro.price")} <span>{t("heroPage.pricing.pro.per")}</span>
+                    {t("heroPage.pricing.pro.price")}{" "}
+                    <span>{t("heroPage.pricing.pro.per")}</span>
                   </p>
                   <p className="pricing-description">
                     {t("heroPage.pricing.pro.desc")}
                   </p>
                   <ul className="pricing-features">
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.pro.unlimitedUsers")}
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.pro.allStarter")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.pro.advancedAnalytics")}
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.pro.privateProjects")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.pro.prioritySupport")}
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.pro.increasedTokens")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.pro.apiAccess")}
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.pro.advancedAI")}
+                    </li>
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.pro.prioritySupport")}
                     </li>
                   </ul>
                   <a
@@ -520,7 +557,7 @@ export const Hero = () => {
                 </div>
               </div>
 
-              {/* --- CARD 3: Enterprise --- */}
+              {/* Card 3: Enterprise */}
               <div className="pricing-card">
                 <div className="mac-header">
                   <div className="mac-dots">
@@ -530,20 +567,31 @@ export const Hero = () => {
                   </div>
                 </div>
                 <div className="pricing-body">
-                  <h3 className="pricing-tier">{t("heroPage.pricing.enterprise.title")}</h3>
-                  <p className="pricing-price">{t("heroPage.pricing.enterprise.price")}</p>
+                  <h3 className="pricing-tier">
+                    {t("heroPage.pricing.enterprise.title")}
+                  </h3>
+                  <p className="pricing-price">
+                    {t("heroPage.pricing.enterprise.price")}
+                  </p>
                   <p className="pricing-description">
                     {t("heroPage.pricing.enterprise.desc")}
                   </p>
                   <ul className="pricing-features">
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.enterprise.allPro")}
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.enterprise.allPro")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.enterprise.accountMgr")}
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.enterprise.unlimitedPrivate")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.enterprise.ssoSecurity")}
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.enterprise.accountMgr")}
+                    </li>
+                    <li>
+                      <CheckIcon size={16} className="capability-icon" />{" "}
+                      {t("heroPage.pricing.enterprise.ssoSecurity")}
                     </li>
                   </ul>
                   <a
@@ -561,8 +609,7 @@ export const Hero = () => {
       <footer className="footer">
         <div className="footer-content">
           <p>
-            &copy; {new Date().getFullYear()} {t("app.brand")}.
-            {" "}
+            &copy; {new Date().getFullYear()} {t("app.brand")}.{" "}
             {t("footer.copyright")}
           </p>
           <div className="footer-links">

@@ -1,5 +1,8 @@
 {
-  "app": { "brand": "IdeaCollab", "brand_ai": "IdeaCollab AI" },
+  "app": {
+    "brand": "IdeaCollab",
+    "brand_ai": "IdeaCollab AI"
+  },
   "navbar": {
     "dashboard": "Dashboard",
     "projects": "Projects",
@@ -8,7 +11,10 @@
     "toggleSidebar": "Toggle sidebar",
     "toggleMenu": "Toggle menu",
     "themeSwitchTo": "Switch to {mode} mode",
-    "mode": { "light": "light", "dark": "dark" }
+    "mode": {
+      "light": "light",
+      "dark": "dark"
+    }
   },
   "sidebar": {
     "menu": "Menu",
@@ -118,91 +124,100 @@
     }
   },
   "heroPage": {
-    "heroTitle": "AI-Powered Team Organization",
-    "heroSubtitle": "Transform how you manage teams with our advanced AI technology. Automatically organize, optimize, and enhance team collaboration with intelligent insights.",
-    "tryFree": "Try for Free",
-    "watchDemo": "Watch Demo",
+    "heroTitle": "Your Next Great Project Starts Here.",
+    "heroSubtitle": "Unleash your potential. Our AI not only connects you with the perfect talent for your vision, but also becomes the Scrum Master that drives your project to success. Stop searching, start building.",
+    "tryFree": "Start Building for Free",
+    "watchDemo": "Watch the Magic",
     "webappTitle": "IdeaCollab AI",
-    "role": "ROLE: Scrum Master / Team Lead",
-    "capabilities": "CAPABILITIES",
-    "cap1": "Propose estimated dates",
-    "cap2": "Manage calendars & timelines",
-    "cap3": "Assign tasks & responsibilities",
-    "cap4": "Guide & lead team workflow",
-    "currentAction": "Current Action: Optimizing Team Performance",
+    "role": "ROLE: Your Strategic Copilot",
+    "capabilities": "INTELLIGENCE IN ACTION",
+    "cap1": "Recruit elite teams",
+    "cap2": "Design winning roadmaps",
+    "cap3": "Orchestrate tasks and synergies",
+    "cap4": "Predict and annihilate obstacles",
+    "currentAction": "Current Action: Forging the dream team for project 'Odyssey'",
     "features": {
-      "smartTitle": "Smart Team Assignment",
-      "smartDesc": "Our AI analyzes skills, availability, and project requirements to create optimal team compositions automatically.",
-      "workloadTitle": "Workload Balancing",
-      "workloadDesc": "Ensure fair distribution of tasks and prevent burnout with our intelligent workload management system.",
-      "analyticsTitle": "Performance Analytics",
-      "analyticsDesc": "Get real-time insights into team performance and identify areas for improvement with AI-driven analytics."
+      "smartTitle": "Intelligent Connection: The Perfect Match",
+      "smartDesc": "Have an idea but not the team? Are you a talent looking for a challenge? Describe your vision or your skills, and our AI will find your ideal accomplices to make history.",
+      "workloadTitle": "Your AI Copilot: Unstoppable Leadership",
+      "workloadDesc": "Forget the heavy lifting of management. The AI assigns tasks, balances workloads, estimates timelines, and organizes sprints, freeing you to focus on what matters: the vision.",
+      "analyticsTitle": "360° Vision: Master Your Progress",
+      "analyticsDesc": "Feel the pulse of your project in real-time. Our analytics don't just show you data; they reveal the fastest path to your goal and help you make winning decisions."
     },
-    "productsTitle": "Our Products",
-    "productsSubtitle": "A suite of tools designed to enhance team productivity and collaboration.",
+    "productsTitle": "An Arsenal of Tools at Your Service",
+    "productsSubtitle": "Each product is designed to demolish an obstacle between you and your goal.",
     "productsList": {
-      "assemblerTitle": "AI Team Assembler",
-      "assemblerDesc": "Dynamically creates the perfect team for any project based on skills, workload, and synergy.",
-      "plannerTitle": "Predictive Planner",
-      "plannerDesc": "Forecasts project timelines and potential bottlenecks using machine learning algorithms.",
-      "hubTitle": "Performance Hub",
-      "hubDesc": "Centralized dashboard for real-time analytics and actionable insights on team performance."
+      "assemblerTitle": "AI Team Assembler: The Dream Team Builder",
+      "assemblerDesc": "Forget week-long casting calls. Describe your mission, and our AI recruits and assembles the winning team in minutes.",
+      "plannerTitle": "Predictive Planner: Your Project Oracle",
+      "plannerDesc": "Anticipate the future. Our AI analyzes millions of data points to detect risks and optimize your path to success before you even take the first step.",
+      "hubTitle": "Performance Hub: The Pulse of Your Project",
+      "hubDesc": "A command center that translates complexity into clarity. Feel your team's rhythm and make decisions with the confidence of a strategist."
     },
-    "solutionsTitle": "Solutions for Your Industry",
-    "solutionsSubtitle": "Tailored AI strategies to meet the unique challenges of your business sector.",
+    "solutionsTitle": "Built for Visionaries Like You",
+    "solutionsSubtitle": "Whatever your battlefield, our platform adapts to give you an unfair advantage over the competition.",
     "solutions": {
-      "tech": "For Tech Startups",
-      "creative": "For Creative Agencies",
-      "enterprise": "For Enterprise"
+      "tech": "For Tech Revolutionaries",
+      "creative": "For Creative Geniuses",
+      "enterprise": "For Expanding Empires"
     },
     "solutionsDesc": {
-      "tech": "Accelerate development cycles and optimize resource allocation in fast-paced environments.",
-      "creative": "Enhance collaboration on creative projects and balance artist workloads effectively.",
-      "enterprise": "Scale team management across large organizations with robust analytics and integration."
+      "tech": "Launch products faster, iterate with agility, and let your development team focus purely on coding the future.",
+      "creative": "Transform creative anarchy into a productive symphony. Manage multiple projects without sacrificing a single drop of inspiration.",
+      "enterprise": "Scale your innovation capacity across the entire organization. Synchronize hundreds of teams under a single strategic vision."
     },
-    "resourcesTitle": "Knowledge & Resources",
-    "resourcesSubtitle": "Explore our guides, articles, and documentation to get the most out of IdeaCollab AI.",
+    "resourcesTitle": "Become a Master of Execution",
+    "resourcesSubtitle": "Dive into the knowledge the best in the business use to launch projects that make a difference and leave a legacy.",
     "resourcesList": {
-      "blogTitle": "Blog",
-      "blogDesc": "Read the latest on AI, team management, and productivity trends from our experts.",
-      "docsTitle": "Documentation",
-      "docsDesc": "In-depth guides and API references for integrating and customizing our tools.",
-      "caseTitle": "Case Studies",
-      "caseDesc": "Discover how leading companies are achieving success with IdeaCollab AI."
+      "blogTitle": "Elite Strategies",
+      "blogDesc": "Cutting-edge articles and tactics on leadership, productivity, and how to build championship-winning teams.",
+      "docsTitle": "The Creator's Handbook",
+      "docsDesc": "Master every corner of the platform. Guides and API references to seamlessly integrate IdeaCollab into your workflow.",
+      "caseTitle": "Victory Stories",
+      "caseDesc": "Discover how leaders and teams like yours are using our AI to launch game-changing products, services, and movements."
     },
-    "pricingTitle": "Simple, Transparent Pricing",
-    "pricingSubtitle": "Choose the plan that's right for your team. No hidden fees.",
+    "pricingTitle": "Choose Your Power. Start Creating Today.",
+    "pricingSubtitle": "We have a plan for every ambition. Start for free and scale without limits when you're ready to conquer the world.",
     "pricing": {
       "starter": {
-        "title": "Starter",
+        "title": "Community",
         "price": "$0",
-        "per": "/ month",
-        "desc": "For individuals and small teams just getting started.",
-        "upToUsers": "Up to {n} users",
-        "basicAnalytics": "Basic analytics",
-        "communitySupport": "Community support",
-        "cta": "Get Started"
+        "per": "/ forever",
+        "desc": "The starting point for visionaries. Launch your projects into the world and find your first allies.",
+        "publicProjects": "Unlimited public projects",
+        "matchmaking": "Matchmaking with the community",
+        "basicTools": "Essential project management",
+        "tokenLimit": "Starter AI tokens",
+        "cta": "Start creating for free",
+        "upToUsers": "Your founding team (up to 5 users)",
+        "basicAnalytics": "Essential project metrics",
+        "communitySupport": "Access to the creator community"
       },
       "pro": {
         "title": "Pro",
         "price": "$20",
         "per": "/ user / month",
-        "desc": "For growing teams that need advanced features.",
-        "unlimitedUsers": "Unlimited users",
-        "advancedAnalytics": "Advanced AI analytics",
+        "desc": "The complete arsenal for serious professionals and teams building in private and at high speed.",
+        "allStarter": "Everything in Community, plus:",
+        "privateProjects": "Up to 10 private projects",
+        "increasedTokens": "More AI power, more speed",
+        "advancedAI": "AI Copilot with advanced capabilities",
         "prioritySupport": "Priority support",
-        "apiAccess": "API access",
         "badge": "Most Popular",
-        "cta": "Try for Free"
+        "cta": "Start 14-day trial",
+        "unlimitedUsers": "Unlimited collaborators",
+        "advancedAnalytics": "Predictive AI analytics",
+        "apiAccess": "API access for integrations"
       },
       "enterprise": {
         "title": "Enterprise",
         "price": "Custom",
-        "desc": "For large organizations with specific security and support needs.",
-        "allPro": "All Pro features",
-        "accountMgr": "Dedicated account manager",
-        "ssoSecurity": "SSO and advanced security",
-        "cta": "Contact Sales"
+        "desc": "A tailor-made solution for your empire. Elite-level scalability, security, and support for unstoppable organizations.",
+        "allPro": "Everything in Pro, plus:",
+        "unlimitedPrivate": "Unlimited private projects",
+        "accountMgr": "Dedicated strategic partner",
+        "ssoSecurity": "Fortress-grade security and control",
+        "cta": "Talk to a strategist"
       }
     }
   }

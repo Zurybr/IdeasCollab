@@ -1,5 +1,8 @@
 {
-  "app": { "brand": "IdeaCollab", "brand_ai": "IdeaCollab AI" },
+  "app": {
+    "brand": "IdeaCollab",
+    "brand_ai": "IdeaCollab AI"
+  },
   "navbar": {
     "dashboard": "Panel",
     "projects": "Proyectos",
@@ -8,7 +11,10 @@
     "toggleSidebar": "Mostrar/ocultar barra lateral",
     "toggleMenu": "Mostrar/ocultar menú",
     "themeSwitchTo": "Cambiar a modo {mode}",
-    "mode": { "light": "claro", "dark": "oscuro" }
+    "mode": {
+      "light": "claro",
+      "dark": "oscuro"
+    }
   },
   "sidebar": {
     "menu": "Menú",
@@ -118,91 +124,100 @@
     }
   },
   "heroPage": {
-    "heroTitle": "Organización de equipos impulsada por IA",
-    "heroSubtitle": "Transforma la gestión de equipos con nuestra tecnología de IA avanzada. Organiza, optimiza y mejora la colaboración con información inteligente.",
-    "tryFree": "Probar gratis",
-    "watchDemo": "Ver demo",
+    "heroTitle": "Tu Próximo Gran Proyecto Empieza Aquí.",
+    "heroSubtitle": "Desata tu potencial. Nuestra IA no solo te conecta con el talento perfecto para tu visión, sino que se convierte en el Scrum Master que impulsa tu proyecto al éxito. Deja de buscar, empieza a construir.",
+    "tryFree": "Construir gratis",
+    "watchDemo": "Ver la magia",
     "webappTitle": "IdeaCollab AI",
-    "role": "ROL: Scrum Master / Líder de Equipo",
-    "capabilities": "CAPACIDADES",
-    "cap1": "Proponer fechas estimadas",
-    "cap2": "Gestionar calendarios y cronogramas",
-    "cap3": "Asignar tareas y responsabilidades",
-    "cap4": "Guiar y liderar el flujo de trabajo del equipo",
-    "currentAction": "Acción actual: Optimizando el desempeño del equipo",
+    "role": "ROL: Tu Copiloto Estratégico",
+    "capabilities": "INTELIGENCIA EN ACCIÓN",
+    "cap1": "Reclutar equipos de élite",
+    "cap2": "Diseñar hojas de ruta ganadoras",
+    "cap3": "Orquestar tareas y sinergias",
+    "cap4": "Predecir y aniquilar obstáculos",
+    "currentAction": "Acción actual: Forjando el 'dream team' para el proyecto 'Odyssey'",
     "features": {
-      "smartTitle": "Asignación inteligente de equipos",
-      "smartDesc": "Nuestra IA analiza habilidades, disponibilidad y requisitos del proyecto para crear composiciones óptimas automáticamente.",
-      "workloadTitle": "Balance de carga",
-      "workloadDesc": "Garantiza una distribución justa de tareas y previene el burnout con nuestro sistema inteligente de gestión de carga.",
-      "analyticsTitle": "Analítica de desempeño",
-      "analyticsDesc": "Obtén información en tiempo real sobre el rendimiento del equipo e identifica oportunidades de mejora con analítica impulsada por IA."
+      "smartTitle": "Conexión Inteligente: El Match Perfecto",
+      "smartDesc": "¿Tienes una idea pero no el equipo? ¿Eres talento buscando un reto? Describe tu visión o tus habilidades y la IA encontrará a tus cómplices ideales para hacer historia.",
+      "workloadTitle": "Tu Copiloto IA: Liderazgo Imparable",
+      "workloadDesc": "Olvida el trabajo pesado de la gestión. La IA asigna tareas, balancea cargas, estima tiempos y organiza sprints, liberándote para que te enfoques en lo que importa: la visión.",
+      "analyticsTitle": "Visión 360°: Domina tu Progreso",
+      "analyticsDesc": "Siente el pulso de tu proyecto en tiempo real. Nuestros análisis no solo te muestran datos, te revelan el camino más rápido hacia la meta y te ayudan a tomar decisiones ganadoras."
     },
-    "productsTitle": "Nuestros productos",
-    "productsSubtitle": "Una suite de herramientas para potenciar la productividad y colaboración del equipo.",
+    "productsTitle": "Un Arsenal de Herramientas a tu Servicio",
+    "productsSubtitle": "Cada producto está diseñado para demoler un obstáculo entre tú y tu meta.",
     "productsList": {
-      "assemblerTitle": "AI Team Assembler",
-      "assemblerDesc": "Crea dinámicamente el equipo ideal para cualquier proyecto según habilidades, carga y sinergia.",
-      "plannerTitle": "Predictive Planner",
-      "plannerDesc": "Pronostica cronogramas y cuellos de botella potenciales usando algoritmos de aprendizaje automático.",
-      "hubTitle": "Performance Hub",
-      "hubDesc": "Panel centralizado con analítica en tiempo real e insights accionables sobre el rendimiento del equipo."
+      "assemblerTitle": "AI Team Assembler: El Dream Team Builder",
+      "assemblerDesc": "Olvida los castings que duran semanas. Describe tu misión y nuestra IA recluta y ensambla al equipo ganador en minutos.",
+      "plannerTitle": "Predictive Planner: Tu Oráculo de Proyectos",
+      "plannerDesc": "Anticípate al futuro. Nuestra IA analiza millones de datos para detectar riesgos y optimizar tu ruta al éxito antes de que des el primer paso.",
+      "hubTitle": "Performance Hub: El Pulso de tu Proyecto",
+      "hubDesc": "Un centro de mando que traduce la complejidad en claridad. Siente el ritmo de tu equipo y toma decisiones con la confianza de un estratega."
     },
-    "solutionsTitle": "Soluciones para tu industria",
-    "solutionsSubtitle": "Estrategias de IA a la medida de los retos de tu sector.",
+    "solutionsTitle": "Construido para Visionarios como Tú",
+    "solutionsSubtitle": "Sea cual sea tu campo de batalla, nuestra plataforma se adapta para darte una ventaja injusta sobre la competencia.",
     "solutions": {
-      "tech": "Para startups tecnológicas",
-      "creative": "Para agencias creativas",
-      "enterprise": "Para empresas"
+      "tech": "Para Revolucionarios Tech",
+      "creative": "Para Genios Creativos",
+      "enterprise": "Para Imperios en Expansión"
     },
     "solutionsDesc": {
-      "tech": "Acelera ciclos de desarrollo y optimiza la asignación de recursos en entornos de alta velocidad.",
-      "creative": "Mejora la colaboración en proyectos creativos y equilibra la carga de trabajo de los artistas.",
-      "enterprise": "Escala la gestión de equipos en organizaciones grandes con analítica robusta e integración."
+      "tech": "Lanza productos más rápido, itera con agilidad y deja que tu equipo de desarrollo se enfoque puramente en programar el futuro.",
+      "creative": "Transforma la anarquía creativa en una sinfonía productiva. Gestiona múltiples proyectos sin sacrificar ni una gota de inspiración.",
+      "enterprise": "Escala tu capacidad de innovación a toda la organización. Sincroniza cientos de equipos bajo una misma visión estratégica."
     },
-    "resourcesTitle": "Conocimiento y recursos",
-    "resourcesSubtitle": "Explora guías, artículos y documentación para sacar el máximo de IdeaCollab AI.",
+    "resourcesTitle": "Conviértete en un Maestro de la Ejecución",
+    "resourcesSubtitle": "Sumérgete en el conocimiento que usan los mejores para lanzar proyectos que marcan la diferencia y dejan un legado.",
     "resourcesList": {
-      "blogTitle": "Blog",
-      "blogDesc": "Lee lo más reciente sobre IA, gestión de equipos y productividad de parte de nuestros expertos.",
-      "docsTitle": "Documentación",
-      "docsDesc": "Guías detalladas y referencias de API para integrar y personalizar nuestras herramientas.",
-      "caseTitle": "Casos de éxito",
-      "caseDesc": "Descubre cómo las empresas líderes alcanzan el éxito con IdeaCollab AI."
+      "blogTitle": "Estrategias de Élite",
+      "blogDesc": "Artículos y tácticas de vanguardia sobre liderazgo, productividad y cómo construir equipos que ganan campeonatos.",
+      "docsTitle": "El Manual del Creador",
+      "docsDesc": "Domina cada rincón de la plataforma. Guías y referencias de API para que integres IdeaCollab a tu flujo de trabajo sin fricción.",
+      "caseTitle": "Historias de Victoria",
+      "caseDesc": "Descubre cómo líderes y equipos como el tuyo están usando nuestra IA para lanzar productos, servicios y movimientos que cambian el juego."
     },
-    "pricingTitle": "Precios simples y transparentes",
-    "pricingSubtitle": "Elige el plan ideal para tu equipo. Sin costos ocultos.",
+    "pricingTitle": "Elige tu Poder. Empieza a Crear Hoy.",
+    "pricingSubtitle": "Tenemos un plan para cada ambición. Comienza gratis y escala sin límites cuando estés listo para dominar el mundo.",
     "pricing": {
       "starter": {
-        "title": "Inicial",
+        "title": "Comunidad",
         "price": "$0",
-        "per": "/ mes",
-        "desc": "Para individuos y equipos pequeños que están comenzando.",
-        "upToUsers": "Hasta {n} usuarios",
-        "basicAnalytics": "Analítica básica",
-        "communitySupport": "Soporte de la comunidad",
-        "cta": "Comenzar"
+        "per": "/ siempre",
+        "desc": "El punto de partida para visionarios. Lanza tus proyectos al mundo y encuentra a tus primeros aliados.",
+        "publicProjects": "Proyectos públicos ilimitados",
+        "matchmaking": "Matchmaking con la comunidad",
+        "basicTools": "Gestión de proyectos esencial",
+        "tokenLimit": "Tokens de IA para empezar",
+        "cta": "Empezar a crear gratis",
+        "upToUsers": "Tu equipo fundador (hasta 5 usuarios)",
+        "basicAnalytics": "Métricas esenciales de proyecto",
+        "communitySupport": "Acceso a la comunidad de creadores"
       },
       "pro": {
         "title": "Pro",
         "price": "$20",
         "per": "/ usuario / mes",
-        "desc": "Para equipos en crecimiento que necesitan funciones avanzadas.",
-        "unlimitedUsers": "Usuarios ilimitados",
-        "advancedAnalytics": "Analítica de IA avanzada",
-        "prioritySupport": "Soporte prioritario",
-        "apiAccess": "Acceso a API",
+        "desc": "El arsenal completo para profesionales y equipos serios que construyen en privado y a alta velocidad.",
+        "allStarter": "Todo en Comunidad, y además:",
+        "privateProjects": "Hasta 10 proyectos privados",
+        "increasedTokens": "Más poder de IA, más velocidad",
+        "advancedAI": "Copiloto IA con capacidades avanzadas",
+        "prioritySupport": "Soporte de primera línea",
         "badge": "Más popular",
-        "cta": "Probar gratis"
+        "cta": "Iniciar prueba de 14 días",
+        "unlimitedUsers": "Colaboradores ilimitados",
+        "advancedAnalytics": "Analíticas predictivas con IA",
+        "apiAccess": "Acceso a la API para integraciones"
       },
       "enterprise": {
         "title": "Empresarial",
         "price": "Personalizado",
-        "desc": "Para organizaciones grandes con necesidades específicas de seguridad y soporte.",
-        "allPro": "Todas las funciones Pro",
-        "accountMgr": "Gerente de cuenta dedicado",
-        "ssoSecurity": "SSO y seguridad avanzada",
-        "cta": "Contactar ventas"
+        "desc": "Una solución a la medida de tu imperio. Escalabilidad, seguridad y soporte de nivel élite para organizaciones imparables.",
+        "allPro": "Todo en Pro, y además:",
+        "unlimitedPrivate": "Proyectos privados sin límites",
+        "accountMgr": "Socio estratégico dedicado",
+        "ssoSecurity": "Seguridad y control de fortaleza",
+        "cta": "Hablar con un estratega"
       }
     }
   }
