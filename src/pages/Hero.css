@@ -1,96 +1,347 @@
-.hero-page {
-    min-height: 100vh;
-    background: var(--background);
-    color: var(--text);
+/* Estilos generales para el cuerpo y la fuente */
+body {
+    margin: 0;
+    background-color: #f8f5ed;
+    color: #333;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    color: #333;
+}
+
+p {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 1rem;
+    background-color: #f8f5ed;
 }
 
 .hero-content {
+    width: 95%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-}
-
-.hero-section {
     text-align: center;
-    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
-.hero-section__container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero-section h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 1rem;
 }
 
 .hero-subtitle {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
-    line-height: 1.6;
-    color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #333;
 }
 
-.hero-cta {
+.hero-actions {
     display: flex;
     gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
 }
 
-.btn-lg {
-    padding: 0.75rem 2rem;
-    font-size: 1.1rem;
+.hero-actions .btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px solid #007bff;
 }
 
-.btn-outline {
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    background: transparent;
-}
-
-.btn-outline:hover {
-    background: var(--primary);
+.hero-actions .btn-primary {
+    background-color: #007bff;
     color: white;
 }
 
-.features-section {
-    padding: 6rem 0;
+.hero-actions .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
 }
 
+.hero-actions .btn-secondary {
+    background: none;
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.hero-actions .btn-secondary:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* --- Mac Mockup --- */
+.mac-mockup {
+    width: 100%;
+    max-width: 800px;
+    background-color: #1a1a1a;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 10px 10px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 3rem;
+    overflow: hidden;
+}
+
+.mac-screen {
+    background-color: #282c34;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.mac-header {
+    display: flex;
+    gap: 5px;
+    padding: 8px 10px;
+    background-color: #3a404d;
+    border-bottom: 1px solid #4a505d;
+}
+
+.mac-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.mac-dot.red {
+    background-color: #ff5f56;
+}
+
+.mac-dot.yellow {
+    background-color: #ffbd2e;
+}
+
+.mac-dot.green {
+    background-color: #27c93f;
+}
+
+
+/* --- ✨ NUEVOS ESTILOS PARA LA INTERFAZ DE WEBAPP --- */
+.webapp-body {
+    padding: 1.5rem;
+    text-align: left;
+    /* Usamos una fuente de sistema UI para que se vea como una app real */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #e0e0e0;
+}
+
+.webapp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #4a505d;
+}
+
+.webapp-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.webapp-role {
+    font-size: 0.8rem;
+    font-weight: 500;
+    background-color: #4a505d;
+    color: #c8ceda;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.webapp-capabilities {
+    margin-top: 1.5rem;
+}
+
+.capabilities-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #8b93a3;
+    margin-bottom: 1rem;
+}
+
+.capabilities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Dos columnas */
+    gap: 0.75rem;
+}
+
+.capability-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #d1d5db;
+}
+
+.capability-icon {
+    color: #27c93f;
+    /* Verde para el checkmark */
+}
+
+.webapp-status {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #4a505d;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #c8ceda;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: #27c93f;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(39, 201, 63, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(39, 201, 63, 0);
+    }
+}
+
+/* --- Features Grid --- */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 4rem;
+    width: 100%;
 }
 
 .feature-card {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 8px;
     padding: 2rem;
-    background: var(--surface);
-    border-radius: 1rem;
-    border: 1px solid var(--border);
-    transition: transform 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
-.feature-card:hover {
-    transform: translateY(-5px);
+.feature-icon {
+    color: #007bff;
 }
 
-.feature-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary);
+.feature-card .card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
 }
 
-.feature-card p {
-    color: var(--text-secondary);
-    line-height: 1.6;
+.feature-card .card-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+}
+
+/* --- Footer --- */
+.footer {
+    width: 100%;
+    background-color: #333;
+    color: #f8f8f8;
+    padding: 2rem 1rem;
+    border-top: 2px solid #000;
+    text-align: center;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+.footer-content {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* --- Media Queries para Responsive --- */
+@media (max-width: 500px) {
+    .capabilities-list {
+        grid-template-columns: 1fr;
+        /* Una columna en móviles muy pequeños */
+    }
+}
+
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 4rem;
+    }
 }
