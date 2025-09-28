@@ -18,7 +18,7 @@ function App() {
     if (window.location.pathname === "/") {
       if (userOnboarded === "true") {
         // Usuario ya onboarded, mostrar home
-        return;
+        navigate("/hero");
       } else {
         // Usuario nuevo, redirigir a landing
         navigate("/landing");

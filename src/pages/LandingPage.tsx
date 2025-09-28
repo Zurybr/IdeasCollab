@@ -39,7 +39,7 @@ function LandingPage() {
     localStorage.setItem("onboardingDate", new Date().toISOString());
 
     // Navegar al home
-    navigate("/");
+    navigate("/hero");
   };
 
   useLayoutEffect(() => {
