@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { NavLink } from "react-router";
 import { LightBulbIcon } from "./ui"; // Asegúrate que la ruta a tu ícono sea correcta

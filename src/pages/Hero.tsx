@@ -437,9 +437,9 @@ export const Hero = () => {
         {/* --- SECCIÓN 5: PRICING (VERSIÓN FINAL) --- */}
         <section id="pricing" className="hero-section alt-bg">
           <div className="hero-content">
-            <h1 className="hero-title">Simple, Transparent Pricing</h1>
+            <h1 className="hero-title">{t("heroPage.pricingTitle")}</h1>
             <p className="hero-subtitle">
-              Choose the plan that's right for your team. No hidden fees.
+              {t("heroPage.pricingSubtitle")}
             </p>
             <div className="pricing-grid">
               {/* --- CARD 1: Starter --- */}
@@ -452,32 +452,29 @@ export const Hero = () => {
                   </div>
                 </div>
                 <div className="pricing-body">
-                  <h3 className="pricing-tier">Starter</h3>
+                  <h3 className="pricing-tier">{t("heroPage.pricing.starter.title")}</h3>
                   <p className="pricing-price">
-                    $0 <span>/ month</span>
+                    {t("heroPage.pricing.starter.price")} <span>{t("heroPage.pricing.starter.per")}</span>
                   </p>
                   <p className="pricing-description">
-                    For individuals and small teams just getting started.
+                    {t("heroPage.pricing.starter.desc")}
                   </p>
                   <ul className="pricing-features">
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> Up to
-                      5 users
+                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.starter.upToUsers", { n: 5 })}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> Basic
-                      analytics
+                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.starter.basicAnalytics")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" />{" "}
-                      Community support
+                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.starter.communitySupport")}
                     </li>
                   </ul>
                   <a
                     href="/try-for-free"
                     className="btn btn-secondary pricing-btn"
                   >
-                    Get Started
+                    {t("heroPage.pricing.starter.cta")}
                   </a>
                 </div>
               </div>
@@ -490,39 +487,35 @@ export const Hero = () => {
                     <span className="mac-dot yellow"></span>
                     <span className="mac-dot green"></span>
                   </div>
-                  <div className="featured-badge">Most Popular</div>
+                  <div className="featured-badge">{t("heroPage.pricing.pro.badge")}</div>
                 </div>
                 <div className="pricing-body">
-                  <h3 className="pricing-tier">Pro</h3>
+                  <h3 className="pricing-tier">{t("heroPage.pricing.pro.title")}</h3>
                   <p className="pricing-price">
-                    $20 <span>/ user / month</span>
+                    {t("heroPage.pricing.pro.price")} <span>{t("heroPage.pricing.pro.per")}</span>
                   </p>
                   <p className="pricing-description">
-                    For growing teams that need advanced features.
+                    {t("heroPage.pricing.pro.desc")}
                   </p>
                   <ul className="pricing-features">
                     <li>
-                      <CheckIcon size={16} className="capability-icon" />{" "}
-                      Unlimited users
+                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.pro.unlimitedUsers")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" />{" "}
-                      Advanced AI analytics
+                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.pro.advancedAnalytics")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" />{" "}
-                      Priority support
+                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.pro.prioritySupport")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> API
-                      access
+                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.pro.apiAccess")}
                     </li>
                   </ul>
                   <a
                     href="/try-for-free"
                     className="btn btn-primary pricing-btn"
                   >
-                    Try for Free
+                    {t("heroPage.pricing.pro.cta")}
                   </a>
                 </div>
               </div>
@@ -537,31 +530,27 @@ export const Hero = () => {
                   </div>
                 </div>
                 <div className="pricing-body">
-                  <h3 className="pricing-tier">Enterprise</h3>
-                  <p className="pricing-price">Custom</p>
+                  <h3 className="pricing-tier">{t("heroPage.pricing.enterprise.title")}</h3>
+                  <p className="pricing-price">{t("heroPage.pricing.enterprise.price")}</p>
                   <p className="pricing-description">
-                    For large organizations with specific security and support
-                    needs.
+                    {t("heroPage.pricing.enterprise.desc")}
                   </p>
                   <ul className="pricing-features">
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> All
-                      Pro features
+                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.enterprise.allPro")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" />{" "}
-                      Dedicated account manager
+                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.enterprise.accountMgr")}
                     </li>
                     <li>
-                      <CheckIcon size={16} className="capability-icon" /> SSO
-                      and advanced security
+                      <CheckIcon size={16} className="capability-icon" /> {t("heroPage.pricing.enterprise.ssoSecurity")}
                     </li>
                   </ul>
                   <a
                     href="/contact-sales"
                     className="btn btn-secondary pricing-btn"
                   >
-                    Contact Sales
+                    {t("heroPage.pricing.enterprise.cta")}
                   </a>
                 </div>
               </div>
@@ -572,11 +561,13 @@ export const Hero = () => {
       <footer className="footer">
         <div className="footer-content">
           <p>
-            &copy; {new Date().getFullYear()} IdeaCollab. All rights reserved.
+            &copy; {new Date().getFullYear()} {t("app.brand")}.
+            {" "}
+            {t("footer.copyright")}
           </p>
           <div className="footer-links">
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
+            <a href="/privacy">{t("common.privacyPolicy")}</a>
+            <a href="/terms">{t("common.terms")}</a>
           </div>
           <div className="footer-debug-reset">
             <Button variant="primary" size="sm" onClick={handleClearOnboarding}>

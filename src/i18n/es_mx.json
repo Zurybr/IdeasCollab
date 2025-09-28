@@ -32,6 +32,10 @@
     "mx": "Español (MX)",
     "us": "English (US)"
   },
+  "common": {
+    "privacyPolicy": "Política de privacidad",
+    "terms": "Términos del servicio"
+  },
   "footer": {
     "description": "Transforma tus ideas en realidad con nuestra potente plataforma de colaboración.",
     "product": "Producto",
@@ -166,5 +170,40 @@
       "caseTitle": "Casos de éxito",
       "caseDesc": "Descubre cómo las empresas líderes alcanzan el éxito con IdeaCollab AI."
     },
+    "pricingTitle": "Precios simples y transparentes",
+    "pricingSubtitle": "Elige el plan ideal para tu equipo. Sin costos ocultos.",
+    "pricing": {
+      "starter": {
+        "title": "Inicial",
+        "price": "$0",
+        "per": "/ mes",
+        "desc": "Para individuos y equipos pequeños que están comenzando.",
+        "upToUsers": "Hasta {n} usuarios",
+        "basicAnalytics": "Analítica básica",
+        "communitySupport": "Soporte de la comunidad",
+        "cta": "Comenzar"
+      },
+      "pro": {
+        "title": "Pro",
+        "price": "$20",
+        "per": "/ usuario / mes",
+        "desc": "Para equipos en crecimiento que necesitan funciones avanzadas.",
+        "unlimitedUsers": "Usuarios ilimitados",
+        "advancedAnalytics": "Analítica de IA avanzada",
+        "prioritySupport": "Soporte prioritario",
+        "apiAccess": "Acceso a API",
+        "badge": "Más popular",
+        "cta": "Probar gratis"
+      },
+      "enterprise": {
+        "title": "Empresarial",
+        "price": "Personalizado",
+        "desc": "Para organizaciones grandes con necesidades específicas de seguridad y soporte.",
+        "allPro": "Todas las funciones Pro",
+        "accountMgr": "Gerente de cuenta dedicado",
+        "ssoSecurity": "SSO y seguridad avanzada",
+        "cta": "Contactar ventas"
+      }
+    }
   }
 }

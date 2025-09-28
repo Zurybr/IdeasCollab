@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { NavHero } from "../../components/NavHero";
 import { useI18n } from "../../stores/i18n";
 import "./Auth.css";
@@ -8,7 +8,7 @@ export const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { t } = useI18n();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -71,7 +71,8 @@ export const SignUp = () => {
 
           <div className="auth-switch">
             <p>
-              {t("auth.signup.haveAccount")} <Link to="/login">{t("auth.signup.login")}</Link>
+              {t("auth.signup.haveAccount")}{" "}
+              <Link to="/login">{t("auth.signup.login")}</Link>
             </p>
           </div>
         </div>
