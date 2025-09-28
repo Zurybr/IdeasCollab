@@ -220,5 +220,69 @@
         "cta": "Hablar con un estratega"
       }
     }
+  },
+  "privacyPage": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: 27 de septiembre de 2025",
+    "sections": {
+      "introduction": {
+        "title": "1. Introducción",
+        "content": "Bienvenido a IdeaCollab. Tu privacidad es de suma importancia para nosotros. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos tu información cuando utilizas nuestra plataforma y servicios."
+      },
+      "information_we_collect": {
+        "title": "2. Información que Recopilamos",
+        "content": "Recopilamos información que nos proporcionas directamente, como tu nombre, correo electrónico y contraseña al crear una cuenta. También recopilamos información sobre tus habilidades, intereses y detalles del proyecto para habilitar nuestra función de 'matchmaking'. Automáticamente, recopilamos datos técnicos como tu dirección IP, tipo de navegador e información de uso."
+      },
+      "how_we_use_information": {
+        "title": "3. Cómo Usamos tu Información",
+        "content": "Utilizamos tu información para operar y mantener el servicio, para conectarte con otros usuarios y proyectos, para comunicarnos contigo, para procesar transacciones y para mejorar nuestra plataforma. La información de tu perfil y proyectos públicos será visible para otros usuarios con el fin de facilitar la colaboración."
+      },
+      "sharing_and_disclosure": {
+        "title": "4. Cómo Compartimos tu Información",
+        "content": "No vendemos tu información personal. Podemos compartirla con proveedores de servicios que nos ayudan a operar (como proveedores de hosting), si es requerido por ley, o con tu consentimiento explícito. La información de los perfiles en proyectos públicos es, por naturaleza, pública."
+      },
+      "data_security": {
+        "title": "5. Seguridad de los Datos",
+        "content": "Implementamos medidas de seguridad razonables para proteger tu información contra el acceso no autorizado, la alteración o la destrucción. Sin embargo, ningún sistema es 100% seguro y no podemos garantizar la seguridad absoluta."
+      },
+      "contact_us": {
+        "title": "6. Contáctanos",
+        "content": "Si tienes alguna pregunta sobre esta Política de Privacidad, por favor contáctanos en privacy@ideacollab.com."
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Términos y Condiciones de Servicio",
+    "lastUpdated": "Última actualización: 27 de septiembre de 2025",
+    "sections": {
+      "acceptance": {
+        "title": "1. Aceptación de los Términos",
+        "content": "Al acceder o utilizar los servicios de IdeaCollab ('Servicio'), aceptas estar sujeto a estos Términos y Condiciones. Si no estás de acuerdo con alguna parte de los términos, no puedes acceder al Servicio."
+      },
+      "user_accounts": {
+        "title": "2. Cuentas de Usuario",
+        "content": "Eres responsable de salvaguardar la contraseña que utilizas para acceder al Servicio y de cualquier actividad o acción bajo tu contraseña. Debes notificarnos inmediatamente al tomar conocimiento de cualquier violación de seguridad o uso no autorizado de tu cuenta."
+      },
+      "content_ownership": {
+        "title": "3. Propiedad del Contenido",
+        "content": "Tú retienes todos los derechos sobre el contenido que creas, publicas o compartes en el Servicio ('Contenido de Usuario'). Sin embargo, al publicar Contenido de Usuario en proyectos públicos, nos otorgas una licencia mundial, no exclusiva y libre de regalías para usar, reproducir y mostrar dicho contenido en conexión con el Servicio."
+      },
+      "user_conduct": {
+        "title": "4. Conducta del Usuario",
+        "content": "Aceptas no utilizar el Servicio para ningún propósito ilegal o prohibido. Eres el único responsable de toda tu actividad en conexión con el Servicio. El acoso, el spam o la violación de los derechos de otros usuarios resultará en la terminación de tu cuenta."
+      },
+      "termination": {
+        "title": "5. Terminación",
+        "content": "Podemos terminar o suspender tu acceso a nuestro Servicio inmediatamente, sin previo aviso ni responsabilidad, por cualquier motivo, incluido el incumplimiento de los Términos."
+      },
+      "disclaimer": {
+        "title": "6. Descargo de Responsabilidad",
+        "content": "El Servicio se proporciona 'TAL CUAL' y 'SEGÚN DISPONIBILIDAD', sin garantías de ningún tipo. No garantizamos que el servicio funcionará sin interrupciones o libre de errores."
+      },
+      "contact_us": {
+        "title": "7. Contáctanos",
+        "content": "Si tienes alguna pregunta sobre estos Términos, por favor contáctanos en legal@ideacollab.com."
+      }
+    }
   }
 }

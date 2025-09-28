@@ -7,6 +7,8 @@ import { Hero } from "./pages/Hero.tsx";
 import { Login } from "./pages/auth/Login.tsx";
 import { SignUp } from "./pages/auth/SignUp.tsx";
 import { ContactUs } from "./pages/ContactUs.tsx";
+import { Privacy } from "./pages/Privacy.tsx";
+import { Terms } from "./pages/Terms.tsx";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +50,14 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <ContactUs />,
+  },
+  {
+    path: "/privacy",
+    element: <Privacy />,
+  },
+  {
+    path: "/terms",
+    element: <Terms />,
   },
 ]);
 
