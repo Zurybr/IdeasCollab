@@ -6,6 +6,7 @@ import { Button } from "../components/ui/Button";
 import { NavHero } from "../components/NavHero";
 import "./Hero.css";
 import { useNavigate } from "react-router";
+import { useI18n } from "../stores/i18n";
 
 // --- Tipos y Íconos (con los nuevos añadidos) ---
 type IconProps = { size?: number; className?: string };
@@ -135,6 +136,7 @@ const BookOpenIcon: React.FC<IconProps> = ({ size = 24, className = "" }) => (
 export const Hero = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useI18n();
   const handleClearOnboarding = () => {
     try {
       localStorage.removeItem("userOnboarded");
@@ -172,18 +174,16 @@ export const Hero = () => {
         {/* --- SECCIÓN 1: HERO (Tu código original) --- */}
         <section className="hero-section">
           <div className="hero-content">
-            <h1 className="hero-title">AI-Powered Team Organization</h1>
+            <h1 className="hero-title">{t("heroPage.heroTitle")}</h1>
             <p className="hero-subtitle">
-              Transform how you manage teams with our advanced AI technology.
-              Automatically organize, optimize, and enhance team collaboration
-              with intelligent insights.
+              {t("heroPage.heroSubtitle")}
             </p>
             <div className="hero-actions">
               <a href="/try-for-free" className="btn btn-primary">
-                Try for Free
+                {t("heroPage.tryFree")}
               </a>
               <a href="/demo" className="btn btn-secondary">
-                Watch Demo
+                {t("heroPage.watchDemo")}
               </a>
             </div>
 
@@ -197,35 +197,31 @@ export const Hero = () => {
                 {/* ✨ CAMBIO: Interfaz de Webapp en lugar de código */}
                 <div className="webapp-body">
                   <div className="webapp-header">
-                    <div className="webapp-title">IdeaCollab AI</div>
+                    <div className="webapp-title">{t("heroPage.webappTitle")}</div>
                     <div className="webapp-role">
-                      ROLE: Scrum Master / Team Lead
+                      {t("heroPage.role")}
                     </div>
                   </div>
                   <div className="webapp-capabilities">
-                    <div className="capabilities-title">CAPABILITIES</div>
+                    <div className="capabilities-title">{t("heroPage.capabilities")}</div>
                     <ul className="capabilities-list">
                       <li className="capability-item">
-                        <CheckIcon className="capability-icon" /> Propose
-                        estimated dates
+                        <CheckIcon className="capability-icon" /> {t("heroPage.cap1")}
                       </li>
                       <li className="capability-item">
-                        <CheckIcon className="capability-icon" /> Manage
-                        calendars & timelines
+                        <CheckIcon className="capability-icon" /> {t("heroPage.cap2")}
                       </li>
                       <li className="capability-item">
-                        <CheckIcon className="capability-icon" /> Assign tasks &
-                        responsibilities
+                        <CheckIcon className="capability-icon" /> {t("heroPage.cap3")}
                       </li>
                       <li className="capability-item">
-                        <CheckIcon className="capability-icon" /> Guide & lead
-                        team workflow
+                        <CheckIcon className="capability-icon" /> {t("heroPage.cap4")}
                       </li>
                     </ul>
                   </div>
                   <div className="webapp-status">
                     <span className="status-indicator"></span>
-                    <span>Current Action: Optimizing Team Performance</span>
+                    <span>{t("heroPage.currentAction")}</span>
                   </div>
                 </div>
               </div>
@@ -234,26 +230,23 @@ export const Hero = () => {
             <section className="features-grid">
               <div className="feature-card2">
                 <BrainIcon size={32} className="feature-icon" />
-                <h3 className="card-title">Smart Team Assignment</h3>
+                <h3 className="card-title">{t("heroPage.features.smartTitle")}</h3>
                 <p className="card-description">
-                  Our AI analyzes skills, availability, and project requirements
-                  to create optimal team compositions automatically.
+                  {t("heroPage.features.smartDesc")}
                 </p>
               </div>
               <div className="feature-card2">
                 <ClockIcon size={32} className="feature-icon" />
-                <h3 className="card-title">Workload Balancing</h3>
+                <h3 className="card-title">{t("heroPage.features.workloadTitle")}</h3>
                 <p className="card-description">
-                  Ensure fair distribution of tasks and prevent burnout with our
-                  intelligent workload management system.
+                  {t("heroPage.features.workloadDesc")}
                 </p>
               </div>
               <div className="feature-card2">
                 <ActivityIcon size={32} className="feature-icon" />
-                <h3 className="card-title">Performance Analytics</h3>
+                <h3 className="card-title">{t("heroPage.features.analyticsTitle")}</h3>
                 <p className="card-description">
-                  Get real-time insights into team performance and identify
-                  areas for improvement with AI-driven analytics.
+                  {t("heroPage.features.analyticsDesc")}
                 </p>
               </div>
             </section>
@@ -263,10 +256,9 @@ export const Hero = () => {
         {/* --- SECCIÓN 2: PRODUCTS --- */}
         <section id="products" className="hero-section alt-bg">
           <div className="hero-content">
-            <h1 className="hero-title">Our Products</h1>
+            <h1 className="hero-title">{t("heroPage.productsTitle")}</h1>
             <p className="hero-subtitle">
-              A suite of tools designed to enhance team productivity and
-              collaboration.
+              {t("heroPage.productsSubtitle")}
             </p>
             <section className="features-grid">
               <div className="feature-card2">
@@ -279,10 +271,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <PackageIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">AI Team Assembler</h3>
+                  <h3 className="card-title">{t("heroPage.productsList.assemblerTitle")}</h3>
                   <p className="card-description">
-                    Dynamically creates the perfect team for any project based
-                    on skills, workload, and synergy.
+                    {t("heroPage.productsList.assemblerDesc")}
                   </p>
                 </div>
               </div>
@@ -296,10 +287,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <PackageIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">Predictive Planner</h3>
+                  <h3 className="card-title">{t("heroPage.productsList.plannerTitle")}</h3>
                   <p className="card-description">
-                    Forecasts project timelines and potential bottlenecks using
-                    machine learning algorithms.
+                    {t("heroPage.productsList.plannerDesc")}
                   </p>
                 </div>
               </div>
@@ -313,10 +303,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <PackageIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">Performance Hub</h3>
+                  <h3 className="card-title">{t("heroPage.productsList.hubTitle")}</h3>
                   <p className="card-description">
-                    Centralized dashboard for real-time analytics and actionable
-                    insights on team performance.
+                    {t("heroPage.productsList.hubDesc")}
                   </p>
                 </div>
               </div>
@@ -327,10 +316,9 @@ export const Hero = () => {
         {/* --- SECCIÓN 3: SOLUTIONS --- */}
         <section id="solutions" className="hero-section">
           <div className="hero-content">
-            <h1 className="hero-title">Solutions for Your Industry</h1>
+            <h1 className="hero-title">{t("heroPage.solutionsTitle")}</h1>
             <p className="hero-subtitle">
-              Tailored AI strategies to meet the unique challenges of your
-              business sector.
+              {t("heroPage.solutionsSubtitle")}
             </p>
             <section className="features-grid">
               <div className="feature-card2">
@@ -343,10 +331,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <TargetIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">For Tech Startups</h3>
+                  <h3 className="card-title">{t("heroPage.solutions.tech")}</h3>
                   <p className="card-description">
-                    Accelerate development cycles and optimize resource
-                    allocation in fast-paced environments.
+                    {t("heroPage.solutionsDesc.tech")}
                   </p>
                 </div>
               </div>
@@ -360,10 +347,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <TargetIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">For Creative Agencies</h3>
+                  <h3 className="card-title">{t("heroPage.solutions.creative")}</h3>
                   <p className="card-description">
-                    Enhance collaboration on creative projects and balance
-                    artist workloads effectively.
+                    {t("heroPage.solutionsDesc.creative")}
                   </p>
                 </div>
               </div>
@@ -377,10 +363,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <TargetIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">For Enterprise</h3>
+                  <h3 className="card-title">{t("heroPage.solutions.enterprise")}</h3>
                   <p className="card-description">
-                    Scale team management across large organizations with robust
-                    analytics and integration.
+                    {t("heroPage.solutionsDesc.enterprise")}
                   </p>
                 </div>
               </div>
@@ -391,10 +376,9 @@ export const Hero = () => {
         {/* --- SECCIÓN 4: RESOURCES --- */}
         <section id="resources" className="hero-section alt-bg">
           <div className="hero-content">
-            <h1 className="hero-title">Knowledge & Resources</h1>
+            <h1 className="hero-title">{t("heroPage.resourcesTitle")}</h1>
             <p className="hero-subtitle">
-              Explore our guides, articles, and documentation to get the most
-              out of IdeaCollab AI.
+              {t("heroPage.resourcesSubtitle")}
             </p>
             <section className="features-grid">
               <div className="feature-card2">
@@ -407,10 +391,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <BookOpenIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">Blog</h3>
+                  <h3 className="card-title">{t("heroPage.resourcesList.blogTitle")}</h3>
                   <p className="card-description">
-                    Read the latest on AI, team management, and productivity
-                    trends from our experts.
+                    {t("heroPage.resourcesList.blogDesc")}
                   </p>
                 </div>
               </div>
@@ -424,10 +407,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <BookOpenIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">Documentation</h3>
+                  <h3 className="card-title">{t("heroPage.resourcesList.docsTitle")}</h3>
                   <p className="card-description">
-                    In-depth guides and API references for integrating and
-                    customizing our tools.
+                    {t("heroPage.resourcesList.docsDesc")}
                   </p>
                 </div>
               </div>
@@ -441,10 +423,9 @@ export const Hero = () => {
                 </div>
                 <div className="feature-card-body">
                   <BookOpenIcon size={32} className="feature-icon" />
-                  <h3 className="card-title">Case Studies</h3>
+                  <h3 className="card-title">{t("heroPage.resourcesList.caseTitle")}</h3>
                   <p className="card-description">
-                    Discover how leading companies are achieving success with
-                    IdeaCollab AI.
+                    {t("heroPage.resourcesList.caseDesc")}
                   </p>
                 </div>
               </div>

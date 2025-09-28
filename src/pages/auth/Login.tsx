@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { NavHero } from "../../components/NavHero";
+import { useI18n } from "../../stores/i18n";
 import "./Auth.css";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { t } = useI18n();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,13 +28,13 @@ export const Login = () => {
           </div>
 
           <div className="auth-header">
-            <h2 className="auth-title">IdeaCollab AI</h2>
-            <p className="auth-subtitle">Welcome Back!</p>
+            <h2 className="auth-title">{t("auth.brand")}</h2>
+            <p className="auth-subtitle">{t("auth.login.welcome")}</p>
           </div>
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="email">EMAIL</label>
+              <label htmlFor="email">{t("auth.login.email")}</label>
               <input
                 type="email"
                 id="email"
@@ -42,7 +44,7 @@ export const Login = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="password">PASSWORD</label>
+              <label htmlFor="password">{t("auth.login.password")}</label>
               <input
                 type="password"
                 id="password"
@@ -52,13 +54,13 @@ export const Login = () => {
               />
             </div>
             <button type="submit" className="btn btn-primary auth-btn">
-              Log In
+              {t("auth.login.submit")}
             </button>
           </form>
 
           <div className="auth-switch">
             <p>
-              Don't have an account? <Link to="/signup">Sign up</Link>
+              {t("auth.login.noAccount")} <Link to="/signup">{t("auth.login.signup")}</Link>
             </p>
           </div>
         </div>

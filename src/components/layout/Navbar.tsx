@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useThemeStore } from "../../store/themeStore";
 import { LightBulbIcon } from "../ui";
+import { useI18n } from "../../stores/i18n";
 import "./Navbar.css";
 
 interface NavbarProps {
@@ -10,6 +11,7 @@ interface NavbarProps {
 export const Navbar = ({ onToggleSidebar }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, toggleTheme } = useThemeStore();
+  const { t } = useI18n();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -24,7 +26,7 @@ export const Navbar = ({ onToggleSidebar }: NavbarProps) => {
           <button
             className="navbar__sidebar-toggle"
             onClick={onToggleSidebar}
-            aria-label="Toggle sidebar"
+            aria-label={t("navbar.toggleSidebar")}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path
@@ -38,7 +40,7 @@ export const Navbar = ({ onToggleSidebar }: NavbarProps) => {
           <button
             className="navbar__menu-toggle md:hidden"
             onClick={toggleMenu}
-            aria-label="Toggle menu"
+            aria-label={t("navbar.toggleMenu")}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               {isMenuOpen ? (
@@ -64,23 +66,23 @@ export const Navbar = ({ onToggleSidebar }: NavbarProps) => {
         <div className="navbar__logo">
           <a href="/" className="navbar__logo-link">
             <LightBulbIcon size={28} className="navbar__logo-icon" />
-            <h1 className="navbar__logo-text">IdeaCollab</h1>
+            <h1 className="navbar__logo-text">{t("app.brand")}</h1>
           </a>
         </div>
 
         {/* Desktop Navigation */}
         <div className="navbar__nav hidden md:flex">
           <a href="/" className="navbar__nav-link">
-            Dashboard
+            {t("navbar.dashboard")}
           </a>
           <a href="/projects" className="navbar__nav-link">
-            Projects
+            {t("navbar.projects")}
           </a>
           <a href="/team" className="navbar__nav-link">
-            Team
+            {t("navbar.team")}
           </a>
           <a href="/settings" className="navbar__nav-link">
-            Settings
+            {t("navbar.settings")}
           </a>
         </div>
 
@@ -89,9 +91,9 @@ export const Navbar = ({ onToggleSidebar }: NavbarProps) => {
           <button
             className="navbar__theme-toggle"
             onClick={toggleTheme}
-            aria-label={`Switch to ${
-              theme === "light" ? "dark" : "light"
-            } mode`}
+            aria-label={t("navbar.themeSwitchTo", {
+              mode: t(`navbar.mode.${theme === "light" ? "dark" : "light"}`),
+            })}
           >
             {theme === "light" ? (
               <svg

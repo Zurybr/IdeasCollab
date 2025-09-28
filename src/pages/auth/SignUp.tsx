@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { NavHero } from "../../components/NavHero";
+import { useI18n } from "../../stores/i18n";
 import "./Auth.css";
 
 export const SignUp = () => {
@@ -8,6 +9,7 @@ export const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { t } = useI18n();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,13 +29,13 @@ export const SignUp = () => {
           </div>
 
           <div className="auth-header">
-            <h2 className="auth-title">IdeaCollab AI</h2>
-            <p className="auth-subtitle">Create your Account</p>
+            <h2 className="auth-title">{t("auth.brand")}</h2>
+            <p className="auth-subtitle">{t("auth.signup.title")}</p>
           </div>
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">FULL NAME</label>
+              <label htmlFor="name">{t("auth.signup.name")}</label>
               <input
                 type="text"
                 id="name"
@@ -43,7 +45,7 @@ export const SignUp = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">EMAIL</label>
+              <label htmlFor="email">{t("auth.signup.email")}</label>
               <input
                 type="email"
                 id="email"
@@ -53,7 +55,7 @@ export const SignUp = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="password">PASSWORD</label>
+              <label htmlFor="password">{t("auth.signup.password")}</label>
               <input
                 type="password"
                 id="password"
@@ -63,13 +65,13 @@ export const SignUp = () => {
               />
             </div>
             <button type="submit" className="btn btn-primary auth-btn">
-              Sign Up
+              {t("auth.signup.submit")}
             </button>
           </form>
 
           <div className="auth-switch">
             <p>
-              Already have an account? <Link to="/login">Log in</Link>
+              {t("auth.signup.haveAccount")} <Link to="/login">{t("auth.signup.login")}</Link>
             </p>
           </div>
         </div>

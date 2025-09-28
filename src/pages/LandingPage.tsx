@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
+import { useI18n } from "../stores/i18n";
 
 // Components
 import { Frame, ScrollContainer } from "../components/ui";
@@ -14,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 //=============== LANDING PAGE COMPONENT ===============//
 function LandingPage() {
   const navigate = useNavigate();
+  const { t } = useI18n();
   const mainRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<HTMLDivElement>(null);
@@ -170,14 +172,14 @@ function LandingPage() {
       );
       tl.to(textContainerRef.current, { opacity: 1, duration: 0.5 }, "<1.5");
       tl.to(typingTextRef.current, {
-        text: "Welcome to your new project",
+        text: t("landing.typing1"),
         duration: 4,
         ease: "none",
       });
       tl.to({}, { duration: 2 });
       tl.to(typingTextRef.current, { text: "", duration: 2, ease: "none" });
       tl.to(typingTextRef.current, {
-        text: "Let's build something great",
+        text: t("landing.typing2"),
         duration: 4,
         ease: "none",
       });

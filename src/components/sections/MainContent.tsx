@@ -3,6 +3,7 @@ import { Text } from "../ui/Text";
 import { Button } from "../ui/Button";
 import { ArrowDown } from "../ui/ArrowDown";
 import { Container } from "../ui/Container";
+import { useI18n } from "../../stores/i18n";
 import "./MainContent.css";
 
 export interface MainContentProps extends React.HTMLAttributes<HTMLElement> {
@@ -12,6 +13,7 @@ export interface MainContentProps extends React.HTMLAttributes<HTMLElement> {
 export const MainContent = React.forwardRef<HTMLElement, MainContentProps>(
   ({ className = "", onGetStarted, ...props }, ref) => {
     const classes = ["main-content", className].filter(Boolean).join(" ");
+    const { t } = useI18n();
 
     return (
       <section ref={ref} className={classes} {...props}>
@@ -23,20 +25,17 @@ export const MainContent = React.forwardRef<HTMLElement, MainContentProps>(
             align="center"
             className="main-content__title"
           >
-            Your project starts here.
+            {t("landing.main.title")}
           </Text>
 
           <Text size="lg" align="center" className="main-content__description">
-            Once an idea takes shape, the next step is execution. Our platform
-            connects you with the tools and talent needed to transform a concept
-            into a tangible reality. Explore, collaborate, and build without
-            limits.
+            {t("landing.main.description")}
           </Text>
 
           <div className="main-content__cta">
             <ArrowDown size={32} />
             <Button variant="primary" size="lg" onClick={onGetStarted}>
-              Let's get started!
+              {t("landing.main.cta")}
             </Button>
           </div>
         </Container>

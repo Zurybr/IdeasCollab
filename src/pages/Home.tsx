@@ -1,10 +1,12 @@
 import { Container } from "../components/ui/Container";
 import { Text } from "../components/ui/Text";
 import { Button } from "../components/ui/Button";
+import { useI18n } from "../stores/i18n";
 import "../styles/home.css";
 
 //=============== HOME PAGE COMPONENT ===============//
 function Home() {
+  const { t } = useI18n();
   const handleClearOnboarding = () => {
     localStorage.removeItem("userOnboarded");
     localStorage.removeItem("onboardingDate");
@@ -24,12 +26,11 @@ function Home() {
               align="center"
               className="hero-title"
             >
-              Welcome to IdeaCollab
+              {t("home.heroTitle")}
             </Text>
 
             <Text size="xl" align="center" className="hero-subtitle">
-              Transform your ideas into reality with our powerful collaboration
-              platform. Connect, create, and build without limits.
+              {t("home.heroSubtitle")}
             </Text>
 
             <div className="hero-actions">
@@ -43,7 +44,7 @@ function Home() {
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
-                Start New Project
+                {t("home.startProject")}
               </Button>
 
               <Button variant="outline" size="lg" className="action-button">
@@ -56,7 +57,7 @@ function Home() {
                 >
                   <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
                 </svg>
-                View Projects
+                {t("home.viewProjects")}
               </Button>
             </div>
           </div>
@@ -82,7 +83,7 @@ function Home() {
                 12
               </Text>
               <Text size="sm" className="stat-label">
-                Active Projects
+                {t("home.stats.active")}
               </Text>
             </div>
 
@@ -101,7 +102,7 @@ function Home() {
                 8
               </Text>
               <Text size="sm" className="stat-label">
-                Team Members
+                {t("home.stats.team")}
               </Text>
             </div>
 
@@ -120,7 +121,7 @@ function Home() {
                 47
               </Text>
               <Text size="sm" className="stat-label">
-                Completed Tasks
+                {t("home.stats.completed")}
               </Text>
             </div>
 
@@ -139,7 +140,7 @@ function Home() {
                 3
               </Text>
               <Text size="sm" className="stat-label">
-                Achievements
+                {t("home.stats.achievements")}
               </Text>
             </div>
           </div>
@@ -156,7 +157,7 @@ function Home() {
             align="center"
             className="section-title"
           >
-            Quick Actions
+            {t("home.quickActions")}
           </Text>
 
           <div className="actions-grid">
@@ -172,10 +173,10 @@ function Home() {
                 </svg>
               </div>
               <Text as="h3" size="lg" weight="semibold">
-                Create Project
+                {t("home.actions.createTitle")}
               </Text>
               <Text size="sm" className="action-description">
-                Start a new collaborative project
+                {t("home.actions.createDesc")}
               </Text>
             </div>
 
@@ -191,10 +192,10 @@ function Home() {
                 </svg>
               </div>
               <Text as="h3" size="lg" weight="semibold">
-                Invite Team
+                {t("home.actions.inviteTitle")}
               </Text>
               <Text size="sm" className="action-description">
-                Add collaborators to your workspace
+                {t("home.actions.inviteDesc")}
               </Text>
             </div>
 
@@ -210,10 +211,10 @@ function Home() {
                 </svg>
               </div>
               <Text as="h3" size="lg" weight="semibold">
-                Resources
+                {t("home.actions.resourcesTitle")}
               </Text>
               <Text size="sm" className="action-description">
-                Access tools and documentation
+                {t("home.actions.resourcesDesc")}
               </Text>
             </div>
           </div>
@@ -221,7 +222,7 @@ function Home() {
           {/* Debug Button */}
           <div className="debug-section">
             <Button variant="outline" size="sm" onClick={handleClearOnboarding}>
-              Reset Onboarding (Debug)
+              {t("home.debugReset")}
             </Button>
           </div>
         </Container>

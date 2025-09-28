@@ -1,0 +1,170 @@
+{
+  "app": { "brand": "IdeaCollab", "brand_ai": "IdeaCollab AI" },
+  "navbar": {
+    "dashboard": "Panel",
+    "projects": "Proyectos",
+    "team": "Equipo",
+    "settings": "Ajustes",
+    "toggleSidebar": "Mostrar/ocultar barra lateral",
+    "toggleMenu": "Mostrar/ocultar menú",
+    "themeSwitchTo": "Cambiar a modo {mode}",
+    "mode": { "light": "claro", "dark": "oscuro" }
+  },
+  "sidebar": {
+    "menu": "Menú",
+    "close": "Cerrar barra lateral",
+    "dashboard": "Panel",
+    "projects": "Proyectos",
+    "team": "Equipo",
+    "resources": "Recursos",
+    "settings": "Ajustes",
+    "userAlt": "Usuario"
+  },
+  "navhero": {
+    "products": "Productos",
+    "solutions": "Soluciones",
+    "resources": "Recursos",
+    "pricing": "Precios",
+    "contact": "Contáctanos",
+    "login": "Ingresar",
+    "signup": "Crear cuenta",
+    "language": "Idioma",
+    "mx": "Español (MX)",
+    "us": "English (US)"
+  },
+  "footer": {
+    "description": "Transforma tus ideas en realidad con nuestra potente plataforma de colaboración.",
+    "product": "Producto",
+    "company": "Compañía",
+    "support": "Soporte",
+    "links": {
+      "features": "Funciones",
+      "pricing": "Precios",
+      "documentation": "Documentación",
+      "api": "API",
+      "about": "Acerca de",
+      "blog": "Blog",
+      "careers": "Empleos",
+      "contact": "Contacto",
+      "help": "Centro de ayuda",
+      "community": "Comunidad",
+      "status": "Estado",
+      "privacy": "Privacidad"
+    },
+    "copyright": "Todos los derechos reservados."
+  },
+  "home": {
+    "heroTitle": "Bienvenido a IdeaCollab",
+    "heroSubtitle": "Transforma tus ideas en realidad con nuestra potente plataforma de colaboración. Conecta, crea y construye sin límites.",
+    "startProject": "Crear proyecto",
+    "viewProjects": "Ver proyectos",
+    "stats": {
+      "active": "Proyectos activos",
+      "team": "Miembros del equipo",
+      "completed": "Tareas completadas",
+      "achievements": "Logros"
+    },
+    "quickActions": "Acciones rápidas",
+    "actions": {
+      "createTitle": "Crear proyecto",
+      "createDesc": "Comienza un nuevo proyecto colaborativo",
+      "inviteTitle": "Invitar equipo",
+      "inviteDesc": "Agrega colaboradores a tu espacio de trabajo",
+      "resourcesTitle": "Recursos",
+      "resourcesDesc": "Accede a herramientas y documentación"
+    },
+    "debugReset": "Reiniciar onboarding (Debug)"
+  },
+  "auth": {
+    "brand": "IdeaCollab AI",
+    "login": {
+      "welcome": "¡Bienvenido de nuevo!",
+      "email": "EMAIL",
+      "password": "CONTRASEÑA",
+      "submit": "Ingresar",
+      "noAccount": "¿No tienes cuenta?",
+      "signup": "Regístrate"
+    },
+    "signup": {
+      "title": "Crea tu cuenta",
+      "name": "NOMBRE COMPLETO",
+      "email": "EMAIL",
+      "password": "CONTRASEÑA",
+      "submit": "Crear cuenta",
+      "haveAccount": "¿Ya tienes cuenta?",
+      "login": "Ingresa"
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Nos encanta saber de ti",
+    "name": "NOMBRE COMPLETO",
+    "email": "EMAIL",
+    "message": "MENSAJE",
+    "submit": "Enviar mensaje",
+    "thanks": "¡Gracias por tu mensaje! Te responderemos pronto."
+  },
+  "landing": {
+    "typing1": "Bienvenido a tu nuevo proyecto",
+    "typing2": "Construyamos algo grandioso",
+    "main": {
+      "title": "Tu proyecto comienza aquí.",
+      "description": "Cuando una idea toma forma, el siguiente paso es la ejecución. Nuestra plataforma te conecta con las herramientas y el talento necesarios para transformar un concepto en realidad. Explora, colabora y construye sin límites.",
+      "cta": "¡Comencemos!"
+    }
+  },
+  "heroPage": {
+    "heroTitle": "Organización de equipos impulsada por IA",
+    "heroSubtitle": "Transforma la gestión de equipos con nuestra tecnología de IA avanzada. Organiza, optimiza y mejora la colaboración con información inteligente.",
+    "tryFree": "Probar gratis",
+    "watchDemo": "Ver demo",
+    "webappTitle": "IdeaCollab AI",
+    "role": "ROL: Scrum Master / Líder de Equipo",
+    "capabilities": "CAPACIDADES",
+    "cap1": "Proponer fechas estimadas",
+    "cap2": "Gestionar calendarios y cronogramas",
+    "cap3": "Asignar tareas y responsabilidades",
+    "cap4": "Guiar y liderar el flujo de trabajo del equipo",
+    "currentAction": "Acción actual: Optimizando el desempeño del equipo",
+    "features": {
+      "smartTitle": "Asignación inteligente de equipos",
+      "smartDesc": "Nuestra IA analiza habilidades, disponibilidad y requisitos del proyecto para crear composiciones óptimas automáticamente.",
+      "workloadTitle": "Balance de carga",
+      "workloadDesc": "Garantiza una distribución justa de tareas y previene el burnout con nuestro sistema inteligente de gestión de carga.",
+      "analyticsTitle": "Analítica de desempeño",
+      "analyticsDesc": "Obtén información en tiempo real sobre el rendimiento del equipo e identifica oportunidades de mejora con analítica impulsada por IA."
+    },
+    "productsTitle": "Nuestros productos",
+    "productsSubtitle": "Una suite de herramientas para potenciar la productividad y colaboración del equipo.",
+    "productsList": {
+      "assemblerTitle": "AI Team Assembler",
+      "assemblerDesc": "Crea dinámicamente el equipo ideal para cualquier proyecto según habilidades, carga y sinergia.",
+      "plannerTitle": "Predictive Planner",
+      "plannerDesc": "Pronostica cronogramas y cuellos de botella potenciales usando algoritmos de aprendizaje automático.",
+      "hubTitle": "Performance Hub",
+      "hubDesc": "Panel centralizado con analítica en tiempo real e insights accionables sobre el rendimiento del equipo."
+    },
+    "solutionsTitle": "Soluciones para tu industria",
+    "solutionsSubtitle": "Estrategias de IA a la medida de los retos de tu sector.",
+    "solutions": {
+      "tech": "Para startups tecnológicas",
+      "creative": "Para agencias creativas",
+      "enterprise": "Para empresas"
+    },
+    "solutionsDesc": {
+      "tech": "Acelera ciclos de desarrollo y optimiza la asignación de recursos en entornos de alta velocidad.",
+      "creative": "Mejora la colaboración en proyectos creativos y equilibra la carga de trabajo de los artistas.",
+      "enterprise": "Escala la gestión de equipos en organizaciones grandes con analítica robusta e integración."
+    },
+    "resourcesTitle": "Conocimiento y recursos",
+    "resourcesSubtitle": "Explora guías, artículos y documentación para sacar el máximo de IdeaCollab AI.",
+    "resourcesList": {
+      "blogTitle": "Blog",
+      "blogDesc": "Lee lo más reciente sobre IA, gestión de equipos y productividad de parte de nuestros expertos.",
+      "docsTitle": "Documentación",
+      "docsDesc": "Guías detalladas y referencias de API para integrar y personalizar nuestras herramientas.",
+      "caseTitle": "Casos de éxito",
+      "caseDesc": "Descubre cómo las empresas líderes alcanzan el éxito con IdeaCollab AI."
+    },
+  }
+}

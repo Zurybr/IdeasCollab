@@ -1,26 +1,28 @@
 import "./Footer.css";
+import { useI18n } from "../../stores/i18n";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useI18n();
 
   const footerLinks = {
     product: [
-      { label: "Features", href: "/features" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Documentation", href: "/docs" },
-      { label: "API", href: "/api" },
+      { label: t("footer.links.features"), href: "/features" },
+      { label: t("footer.links.pricing"), href: "/pricing" },
+      { label: t("footer.links.documentation"), href: "/docs" },
+      { label: t("footer.links.api"), href: "/api" },
     ],
     company: [
-      { label: "About", href: "/about" },
-      { label: "Blog", href: "/blog" },
-      { label: "Careers", href: "/careers" },
-      { label: "Contact", href: "/contact" },
+      { label: t("footer.links.about"), href: "/about" },
+      { label: t("footer.links.blog"), href: "/blog" },
+      { label: t("footer.links.careers"), href: "/careers" },
+      { label: t("footer.links.contact"), href: "/contact" },
     ],
     support: [
-      { label: "Help Center", href: "/help" },
-      { label: "Community", href: "/community" },
-      { label: "Status", href: "/status" },
-      { label: "Privacy", href: "/privacy" },
+      { label: t("footer.links.help"), href: "/help" },
+      { label: t("footer.links.community"), href: "/community" },
+      { label: t("footer.links.status"), href: "/status" },
+      { label: t("footer.links.privacy"), href: "/privacy" },
     ],
   };
 
@@ -40,12 +42,11 @@ export const Footer = () => {
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
             </div>
-            <span className="footer__brand-text">IdeaCollab</span>
+            <span className="footer__brand-text">{t("app.brand")}</span>
           </div>
 
           <p className="footer__description">
-            Transform your ideas into reality with our powerful collaboration
-            platform.
+            {t("footer.description")}
           </p>
 
           <div className="footer__social">
@@ -96,12 +97,11 @@ export const Footer = () => {
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               </div>
-              <span className="footer__brand-text">IdeaCollab</span>
+              <span className="footer__brand-text">{t("app.brand")}</span>
             </div>
 
             <p className="footer__description">
-              Transform your ideas into reality with our powerful collaboration
-              platform.
+              {t("footer.description")}
             </p>
 
             <div className="footer__social">
@@ -140,7 +140,7 @@ export const Footer = () => {
 
           <div className="footer__links">
             <div className="footer__link-group">
-              <h3 className="footer__link-title">Product</h3>
+              <h3 className="footer__link-title">{t("footer.product")}</h3>
               <ul className="footer__link-list">
                 {footerLinks.product.map((link) => (
                   <li key={link.href}>
@@ -153,7 +153,7 @@ export const Footer = () => {
             </div>
 
             <div className="footer__link-group">
-              <h3 className="footer__link-title">Company</h3>
+              <h3 className="footer__link-title">{t("footer.company")}</h3>
               <ul className="footer__link-list">
                 {footerLinks.company.map((link) => (
                   <li key={link.href}>
@@ -166,7 +166,7 @@ export const Footer = () => {
             </div>
 
             <div className="footer__link-group">
-              <h3 className="footer__link-title">Support</h3>
+              <h3 className="footer__link-title">{t("footer.support")}</h3>
               <ul className="footer__link-list">
                 {footerLinks.support.map((link) => (
                   <li key={link.href}>
@@ -183,7 +183,9 @@ export const Footer = () => {
         {/* Copyright */}
         <div className="footer__bottom">
           <p className="footer__copyright">
-            © {currentYear} IdeaCollab. All rights reserved.
+            © {currentYear} {t("app.brand")}.
+            {" "}
+            {t("footer.copyright")}
           </p>
         </div>
       </div>

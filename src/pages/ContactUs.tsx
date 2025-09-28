@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { NavHero } from "../components/NavHero";
+import { useI18n } from "../stores/i18n";
 import "./auth/Auth.css"; // Reutilizamos los estilos de autenticación
 
 export const ContactUs = () => {
@@ -10,12 +11,13 @@ export const ContactUs = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
+  const { t } = useI18n();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Aquí iría la lógica para enviar el mensaje (ej. a una API o servicio de email)
     console.log("Contact form submitted:", { name, email, message });
-    alert("Thank you for your message! We'll get back to you soon.");
+    alert(t("contact.thanks"));
     navigate("/"); // Redirige al inicio después de enviar
   };
 
@@ -32,13 +34,13 @@ export const ContactUs = () => {
           </div>
 
           <div className="auth-header">
-            <h2 className="auth-title">Contact Us</h2>
-            <p className="auth-subtitle">We'd love to hear from you</p>
+            <h2 className="auth-title">{t("contact.title")}</h2>
+            <p className="auth-subtitle">{t("contact.subtitle")}</p>
           </div>
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">FULL NAME</label>
+              <label htmlFor="name">{t("contact.name")}</label>
               <input
                 type="text"
                 id="name"
@@ -48,7 +50,7 @@ export const ContactUs = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">EMAIL</label>
+              <label htmlFor="email">{t("contact.email")}</label>
               <input
                 type="email"
                 id="email"
@@ -58,7 +60,7 @@ export const ContactUs = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="message">MESSAGE</label>
+              <label htmlFor="message">{t("contact.message")}</label>
               <textarea
                 id="message"
                 value={message}
@@ -68,7 +70,7 @@ export const ContactUs = () => {
               />
             </div>
             <button type="submit" className="btn btn-primary auth-btn">
-              Send Message
+              {t("contact.submit")}
             </button>
           </form>
         </div>
