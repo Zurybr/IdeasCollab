@@ -30,6 +30,56 @@ body {
     overflow-x: hidden;
 }
 
+/* ===== Scrollbar (macOS-like minimal) ===== */
+/* WebKit Browsers */
+body::-webkit-scrollbar {
+    width: 10px;
+    /* Slightly wider so hover state feels smooth */
+    height: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--text-rgb), 0.25);
+    border-radius: 20px;
+    border: 2px solid transparent;
+    /* creates padding illusion */
+    background-clip: padding-box;
+    transition: background-color 0.25s ease;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(var(--text-rgb), 0.45);
+}
+
+body::-webkit-scrollbar-thumb:active {
+    background-color: rgba(var(--text-rgb), 0.7);
+}
+
+/* Firefox (guarded for compatibility) */
+@supports (scrollbar-width: thin) {
+    html {
+        scrollbar-width: thin;
+        /* auto | thin | none */
+        scrollbar-color: rgba(88, 110, 117, 0.35) transparent;
+        /* thumb | track */
+    }
+}
+
+/* Optional: hide scrollbar when not scrolling (WebKit) */
+@media (hover: hover) {
+    body::-webkit-scrollbar-thumb {
+        background-color: rgba(var(--text-rgb), 0.18);
+    }
+
+    body:hover::-webkit-scrollbar-thumb {
+        background-color: rgba(var(--text-rgb), 0.25);
+    }
+}
+
 .App {
     width: 100vw;
     min-height: 100vh;

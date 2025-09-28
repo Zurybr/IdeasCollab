@@ -197,6 +197,9 @@ function LandingPage() {
         { y: 20, opacity: 0 },
         { y: 0, opacity: 1, duration: 1.5, ease: "power3.out" }
       );
+      // Hold (pause) after the icon appears so the user needs a little more scroll
+      // before the intro fades out. Adjust duration (seconds) to taste.
+      tl.to({}, { duration: 2 });
       tl.to(introSectionRef.current, {
         opacity: 0,
         duration: 1.5,
@@ -251,7 +254,7 @@ function LandingPage() {
       window.removeEventListener("beforeunload", handleBeforeUnload);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [t]);
 
   return (
     <div className="LandingPage" ref={mainRef}>
