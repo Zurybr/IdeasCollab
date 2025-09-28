@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import { LightBulbIcon } from "./ui";
 import "./NavHero.css";
 
 export const NavHero = () => {
@@ -6,7 +7,10 @@ export const NavHero = () => {
     <nav className="nav-hero">
       <div className="nav-hero__container">
         <div className="nav-hero__logo">
-          <h1>TeamAI</h1>
+          <NavLink to="/" className="logo-link">
+            <LightBulbIcon size={28} className="navbar__logo-icon" />
+            <h1>IdeaCollab</h1>
+          </NavLink>
         </div>
 
         <div className="nav-hero__links">

@@ -5,7 +5,7 @@
     background: var(--background);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 100;
 }
 
@@ -21,8 +21,21 @@
 .nav-hero__logo h1 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--text);
     margin: 0;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.logo-link svg {
+    width: 24px;
+    height: 24px;
 }
 
 .nav-hero__links {
@@ -32,20 +45,41 @@
 }
 
 .nav-hero__links a {
-    color: var(--text);
+    color: #2196f3;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .nav-hero__links a:hover {
-    color: var(--primary);
+    color: #1976d2;
 }
 
 .nav-hero__auth {
     display: flex;
     gap: 1rem;
     align-items: center;
+}
+
+.nav-hero__auth .btn-text {
+    color: #2196f3;
+}
+
+.nav-hero__auth .btn-text:hover {
+    color: #1976d2;
+}
+
+.nav-hero__auth .btn-primary {
+    background: #2196f3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.nav-hero__auth .btn-primary:hover {
+    background: #1976d2;
+    transform: translateY(-1px);
 }
 
 .btn {
