@@ -87,7 +87,13 @@
 
 /* --- Estilos para el Menú Desplegable en Móvil --- */
 @media (max-width: 767px) {
-    .nav-hero__auth {
+
+    /* Ocultar solo los botones de login/signup en móvil, pero mantener el selector de idioma */
+    .nav-hero__auth .btn {
+        display: none;
+    }
+
+    .nav-hero__auth label {
         display: none;
     }
 
@@ -111,6 +117,33 @@
         font-size: 1.1rem;
         font-weight: 400;
         /* Regular weight */
+    }
+
+    /* Estilos para el selector de idioma en móvil */
+    .nav-hero__mobile-language {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #ddd;
+        width: 100%;
+    }
+
+    /* Estilos para los botones de auth en móvil */
+    .nav-hero__mobile-auth {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #ddd;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-hero__mobile-auth .btn {
+        display: inline-flex !important;
     }
 }
 
@@ -233,4 +266,30 @@
 .nav-hero__auth {
     gap: 0.5rem;
     /* Puedes ajustar este valor */
+}
+
+/* Estilos específicos para móvil del language selector */
+@media (max-width: 767px) {
+    .language-selector__trigger {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        min-width: 60px;
+        justify-content: center;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: white;
+    }
+
+    .language-selector__dropdown {
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        min-width: 100px;
+    }
+
+    .language-selector__option {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        text-align: center;
+    }
 }

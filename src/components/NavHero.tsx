@@ -152,6 +152,34 @@ export const NavHero = () => {
           <NavLink to="/resources">{t("navhero.resources")}</NavLink>
           <NavLink to="/pricing">{t("navhero.pricing")}</NavLink>
           <NavLink to="/contact">{t("navhero.contact")}</NavLink>
+
+          {/* Selector de idioma para móvil */}
+          {isMenuOpen && (
+            <div className="nav-hero__mobile-language">
+              <span
+                style={{
+                  fontSize: "0.9rem",
+                  marginBottom: "0.5rem",
+                  color: "#666",
+                }}
+              >
+                {t("navhero.language")}:
+              </span>
+              <LanguageSelector />
+            </div>
+          )}
+
+          {/* Botones de auth para móvil */}
+          {isMenuOpen && (
+            <div className="nav-hero__mobile-auth">
+              <NavLink to="/login" className="btn btn-text">
+                {t("navhero.login")}
+              </NavLink>
+              <NavLink to="/signup" className="btn btn-primary">
+                {t("navhero.signup")}
+              </NavLink>
+            </div>
+          )}
         </div>
 
         <div
