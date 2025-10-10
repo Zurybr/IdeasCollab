@@ -3,6 +3,9 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+# Install build dependencies required for native modules like @swc/core
+RUN apk add --no-cache python3 make g++ libc6-compat
+
 # Copy package files
 COPY package*.json ./
 
